@@ -64,17 +64,14 @@
 <script src="include/js/modernizr.js"></script>
 
 <!-- Analytics -->
-<script type="text/javascript">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'Insert Your Code']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+	ga('create', 'UA-56514393-1', 'auto');
+	ga('send', 'pageview');
 
 </script>
 <!-- End Analytics -->
@@ -145,9 +142,9 @@
             <div class="title-page">
                 <h2 class="title" id="about">Color outside the lines of code</h2>
 <!--                <h3 class="title-description">Mai El-Awini, creative developer.</h3>-->
-                <h3 id="about">I'm Mai El-Awini, a Creative Developer who thrives in the crossover between code and art.
-                    <br/>I make Unity3d and iOS apps, and have specalized in Augmented/Virtual Reality through my work at Current Studios. I've worked on a wide range of projects such as games, promotional experiences and apps with dynamically updating content.  
-                    <br/>I keep inspired by learning new skills, drinking coffee, and taking lots of <a href="http://mai710.tumblr.com" target="_blank">art breaks!</a>
+                <h3 id="about">I'm Mai El-Awini, a Creative Developer with a passion for beautifully designed apps.
+                    <br/>I make iOS and Unity3d apps, and have specalized in Augmented/Virtual Reality through my work at Current Studios.  
+                    <br/>When I'm not working, I'm probably <a href="http://mai710.tumblr.com" target="_blank">making art</a> on my iPad.
                     </h3>
             </div>
         </div>
