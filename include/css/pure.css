@@ -12,6 +12,7 @@ body {
     line-height: 1.7em;
     color: #7f8c8d;
     font-size: 13px;
+    overflow: hidden;
 }
 
 h1,
@@ -21,7 +22,36 @@ h4,
 h5,
 h6,
 label {
-    color: #34495e;
+    color: white;
+}
+
+.p {
+    color: #dedede;
+}
+
+.title {
+    color: white; 
+    font-family: 'Lato', sans-serif;
+/*    font-weight:   400;*/
+/*    font-style: italic;*/
+/*    font-weight: 400;*/
+/*    margin-top: -20px;*/
+    margin-bottom: -20px;
+}
+.inner {
+/*    font-family: 'Droid Sans', sans-serif;*/
+    font-weight: 200;
+    font-style: italic;
+/*    font-size: 23;*/
+/*    margin-bottom: -20px;*/
+}
+
+.dash {
+    color: #F2C784;
+    margin-top: 10px;
+    margin-bottom: -15px;
+    font-family: sans-serif;
+    font-weight: 700;
 }
 
 .pure-img-responsive {
@@ -33,8 +63,31 @@ label {
  * -- LAYOUT STYLES --
  * These are some useful classes which I will need
  */
+
+
+.pure-g.fullscreen-g {
+    height: 100%;
+    width: 100%;
+}
+
 .l-box {
-    padding: 1em;
+/*    visibility: hidden;*/
+    position: relative;
+    background-color: #242424;
+    margin-top: auto;
+    margin-bottom: 0;
+    top: 100%;
+    height: 100%;
+    
+    -ms-transition: all 0.2s linear 0.02s;
+    -webkit-transition: all 0.2s linear 0.02s;
+    transition: all 0.2s linear 0.02s;
+}
+
+.l-box .overlay {
+    background: rgba(36, 36, 36, 0.75);   
+    width: 100%;
+    height: 100%;
 }
 
 .l-box-lrg {
@@ -91,12 +144,14 @@ a.pure-button-primary {
  */
 
 .home-menu {
+    top: -100px;
+    height: 60px;
     padding: 0.5em;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 .home-menu {
-    background: #32363A;
+    background: #E8CA9A;
 }
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
@@ -106,26 +161,48 @@ a.pure-button-primary {
 }
 
 .home-menu .pure-menu-heading {
-    color: white;
+    padding: 14px;
+    margin: 0;
+    height: 100%;
+    vertical-align: middle;
+    color: #242424;
     font-weight: 400;
     font-size: 120%;
 }
 
-.pure-menu-selected .pure-menu-link, .pure-menu-selected .pure-menu-link:visited {
-   color: #F2C784; 
+.pure-menu-logo {
+    position: absolute;
+    display: none;
+    width: 80px;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    border: 2px solid white; 
+    border-radius: 50%;
+    background-color: #E8CA9A;
+    background-image: url("../img/logo-white.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.pure-menu-item .pure-menu-selected .pure-menu-link, .pure-menu-selected .pure-menu-link:visited {
+    color: #242424; 
 }
 .home-menu .pure-menu-selected .pure-menu-link a {
-    color: #F2C784;
+    color: #242424;
 }
 
 .home-menu a {
-    color: white;
+    color: #242424;
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
-    color: #F2C784;
+    color: white;
 }
 
 
@@ -135,7 +212,7 @@ a.pure-button-primary {
  */
 
 .splash-container {
-    background-image: url("../img/bw-blur.png");
+    background-image: url("../img/keyboard.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
@@ -148,33 +225,39 @@ a.pure-button-primary {
     position: fixed !important;
 }
 
-.overlay {
-    background: rgba(234, 157, 70, 0.5);   
+.splash-container .overlay {
+    background: rgba(0, 0, 0, 0.85);   
     width: 100%;
     height: 100%;
 }
 
 .splash {
     /* absolute center .splash within .splash-container */
-    width: 80%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
     margin: auto;
     position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
+    top: 0px; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
 }
 
 /* This is the main heading that appears on the blue section */
-.splash-head {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border: 3px solid white;
-    padding: 1em 1.6em;
-    font-weight: 100;
-    border-radius: 5px;
-    line-height: 1em;
+.splash-logo {
+/*    font-size: 20px;*/
+/*    font-weight: bold;*/
+/*    color: white;*/
+/*    border: 3px solid white;*/
+/*    padding: 1em 1.6em;*/
+/*    font-weight: 100;*/
+/*    border-radius: 5px;*/
+/*    line-height: 1em;*/
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/logo-gold.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* This is the subheading that appears on the blue section */
@@ -188,14 +271,70 @@ a.pure-button-primary {
  * -- CONTENT STYLES --
  * This represents the content area (everything below the blue section)
  */
+.item:hover .curtain {
+    height: 18%;
+    background-color: rgba(0, 0, 0, 1);
+    
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.item:hover .face {
+    -webkit-filter: sepia(0);
+    filter: sepia(0);
+    
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.item:hover .content-subhead-wrapper {
+/*    opacity: 0;*/
+/*    top: 0;*/
+    
+    -ms-transition: all 0.2s linear 0.15s;
+    -webkit-transition: all 0.2s linear 0.15s;
+    transition: all 0.2s linear 0.15s;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-filter: sepia(1);
+    filter: sepia(1);
+    
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.curtain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8); 
+    
+    -ms-transition: all 0.2s linear 0.02s;
+    -webkit-transition: all 0.2s linear 0.02s;
+    transition: all 0.2s linear 0.02s;
+}
+
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
     top: 100%;
     width: 100%;
+    height: 95%;
     min-height: 12%;
     z-index: 2;
-    background: white;
+    background: rgba(0.0, 0.0, 0.0, 0.0);
 
 }
 
@@ -212,13 +351,30 @@ a.pure-button-primary {
     color: white;
 }
 
+.content-subhead-wrapper {
+    position: absolute;
+    opacity: 1;
+/*    top: -30px;*/
+    width: 100%;
+    height: 100%;
+    -ms-transition: opacity 0.1s linear;
+    -webkit-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;    
+}
+
 /* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
-    color: #1f8dd6;
+    position: absolute;
+    text-align: center;
+    color: white;
+    width: 100%;
+    top: 50%;
+/*    background-color: rgb(255, 255, 255);*/
+    transform: translateY(-50%);
 }
-    .content-subhead i {
-        margin-right: 7px;
-    }
+.content-subhead i {
+    margin-right: 7px;
+}
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
@@ -229,6 +385,7 @@ a.pure-button-primary {
 /* This is the class used for the footer */
 .footer {
     background: #111;
+    height: 60px;
 }
 
 /*
@@ -243,10 +400,19 @@ a.pure-button-primary {
         font-size: 16px;
     }
     /* We want to give the content area some more padding */
+/*
     .content {
         padding: 1em;
     }
+*/
 
+    .home-menu .pure-menu-heading {
+        padding: 10px;
+    }
+    
+    .pure-menu-logo {
+        display: inline;   
+    }
     /* We can align the menu header to the left, but float the
     menu items to the right. */
     .home-menu {
@@ -263,9 +429,10 @@ a.pure-button-primary {
 
     /* We decrease the width of the .splash, since we have more width
     to work with */
+/*
     .splash {
-        width: 50%;
-        height: 50%;
+        width: 30%;
+        height: 30%;
     }
 
     .splash-head {
@@ -273,10 +440,11 @@ a.pure-button-primary {
     }
 
 
-    /* We remove the border-separator assigned to .l-box-lrg */
+     We remove the border-separator assigned to .l-box-lrg 
     .l-box-lrg {
         border: none;
     }
+*/
 
 }
 
@@ -286,6 +454,13 @@ a.pure-button-primary {
  * of the mobile and tablet styles.
  */
 @media (min-width: 78em) {
+    .home-menu .pure-menu-heading {
+        padding: 10px;
+    }
+    
+    .pure-menu-logo {
+        display: inline;   
+    }
     /* We increase the header font size even more */
     .splash-head {
         font-size: 300%;
