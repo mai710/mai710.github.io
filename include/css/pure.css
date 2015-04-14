@@ -21,7 +21,7 @@ body {
     line-height: 1.7em;
     color: #7f8c8d;
     font-size: 13px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 h1,
@@ -263,14 +263,21 @@ a.pure-button-primary {
 
 .splash {
     /* absolute center .splash within .splash-container */
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    margin-top: 5%;
     position: absolute;
-    top: 0px; left: 0; bottom: 0; right: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    /*padding-left: 20px;*/
+    top: 0; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
+}
+.splash#upper {
+    /*top: 0;*/
+}
+.splash#lower {
+    visibility: hidden;
+    /*bottom: 0;*/
 }
 
 /* This is the main heading that appears on the blue section */
@@ -307,7 +314,7 @@ a.pure-button-primary {
 }
 
 .splash-item-list {
-    width: 100%;
+    width: auto;
     height: auto;
     list-style: none;
     padding: 0;
@@ -316,11 +323,13 @@ a.pure-button-primary {
 .splash-item {
     position: relative;
     opacity: 0;
-    height: 80px;
-    width: 80px;
-    margin-right: auto; margin-left: auto; margin-top: 30px; margin-bottom: 30px;
-    top: -30px;
-    left: 0; right: 0;
+    height: 50px;
+    width: 50px;
+    margin: 8px;
+    margin-top: 30px; margin-bottom: 30px;
+    top: -30px; /*gets set to 0 in intro animation */
+    left: 50%;
+    transform: translateX(calc(-50% - 8px));
     background-color: rgba(0,0,0,0);
     border: white solid 2px;
     border-radius: 50%;
@@ -328,11 +337,13 @@ a.pure-button-primary {
 .splash-item#secondary {
     height: 50px;
     width: 50px;
-/*    background-color: rgba(240, 196, 128, 0.65);*/
+    margin: 23px;
+    margin-top: 20px; margin-bottom: 20px;
+    transform: translateX(calc(-50% - 23px));
     border: #f0c480 solid 2px;
 }
 .splash-item#first {
-    opacity: 1;
+    /*opacity: 1;*/
     border: none;
     background-color: #f0c480;
     background-image: url("../img/logo-black.png");
@@ -343,7 +354,7 @@ a.pure-button-primary {
 
 .splash-item i {
     color: white;
-    font-size: 35px;
+    font-size: 25px;
     transform: translateY(7%);
 }
 .splash-item#secondary i {
@@ -361,14 +372,66 @@ a.pure-button-primary {
     border: none;
 }
 
+.hi-icon {
+    border-radius: 50%;
+    border: white solid 2px;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.hi-icon:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+    top: 0;
+    left: 0;
+    padding: 0;
+    box-shadow: 0 0 0px 2px #fff;
+    -webkit-box-sizing: content-box; 
+    -moz-box-sizing: content-box; 
+    box-sizing: content-box;
+
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+#secondary .hi-icon:after {
+    box-shadow: 0 0 0px 2px #f0c480;
+}
+#first .hi-icon:after {
+    box-shadow: 0 0 0px 0px #f0c480;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.hi-icon:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px;
+
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
 
 /*
  * -- CONTENT STYLES --
- * This represents the content area (everything below the blue section)
  */
 .item:hover .curtain {
-    /*height: 28%;*/
-    opacity: 0;
+    height: 28%;
+    /*opacity: 0;*/
 
     -ms-transition: all 0.15s linear;
     -webkit-transition: all 0.15s linear;
@@ -387,7 +450,6 @@ a.pure-button-primary {
 }
 
 .item:hover .content-subhead-wrapper {
-    /*opacity: 0.8;*/
     top: 0;
     background-color: rgba(0, 0, 0, 0.8);
 
@@ -397,7 +459,7 @@ a.pure-button-primary {
 }
 
 .item:hover .expand-button {
-    opacity: 1;
+    /*opacity: 1;*/
     
     -ms-transition: all 0.2s linear 0.15s;
     -webkit-transition: all 0.2s linear 0.15s;
@@ -408,7 +470,6 @@ a.pure-button-primary {
     position: absolute;
     width: 100%;
     height: 100%;
-    /*opacity: 0.5;*/
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
@@ -439,15 +500,13 @@ a.pure-button-primary {
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
-    top: 100%;
-    width: 100%;
-    height: 80%;
+    visibility: hidden;
+    top: 95px;
+    height: calc(100% - 95px);
+    width: calc(100% - 70px);
+    margin-left: 70px;
     min-height: 12%;
     z-index: 2;
-
-    /*box-shadow: 0px 0px 23px 5px rgba(119, 119, 119, 0.75);*/
-    /*-moz-box-shadow: 0px 0px 23px 5px rgba(119, 119, 119, 0.75);*/
-    /*-webkit-box-shadow: 0px 0px 23px 5px rgba(119, 119, 119, 0.75);*/
 }
 
 /* This is the class used for the main content headers (<h2>) */
@@ -465,7 +524,6 @@ a.pure-button-primary {
 
 .content-subhead-wrapper {
     position: absolute;
-    /*opacity: 0;*/
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
@@ -507,7 +565,6 @@ a.pure-button-primary {
     transition: all 0.1s linear;
 }
 
-/* This is the class used for the dark-background areas. */
 .ribbon {
     background: #2d3e50;
     color: #aaa;
@@ -564,13 +621,27 @@ a.pure-button-primary {
         height: 40%;
     }
 */
-
-    .splash-head {
-        font-size: 200%;
+    .splash#lower {
+        visibility: visible;
     }
-    
-    .splash-subhead {
-        font-size: 250%;
+
+    .splash-item {
+        height: 80px;
+        width: 80px;
+    }
+
+    .splash-item i {
+        color: white;
+        font-size: 35px;
+        transform: translateY(7%);
+    }
+
+    .content-wrapper {
+        /* These styles are required for the "scroll-over" effect */
+        top: 125px;
+        height: calc(100% - 125px);
+        width: calc(100% - 100px);
+        margin-left: 100px;
     }
 
 /*
@@ -592,17 +663,30 @@ a.pure-button-primary {
         padding: 10px;
     }
  
-/*
-    .splash {
-        width: 40%;
-        height: 40%;
+   /* .splash {
+        padding-left: 20p
+    }*/
+
+    .splash#lower {
+        visibility: visible;
     }
-*/
-    .splash-head {
-        font-size: 200%;
+
+    .splash-item {
+        height: 80px;
+        width: 80px;
     }
-    
-    .splash-subhead {
-        font-size: 250%;
+
+    .splash-item i {
+        color: white;
+        font-size: 35px;
+        transform: translateY(7%);
+    }
+
+    .content-wrapper {
+        /* These styles are required for the "scroll-over" effect */
+        top: 125px;
+        height: calc(100% - 125px);
+        width: calc(100% - 100px);
+        margin-left: 100px;
     }
 }
