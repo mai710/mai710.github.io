@@ -35,25 +35,19 @@ label {
 }
 
 .p {
-    color: #dedede;
+    color: #6E6E6E;
 }
 
 .title {
-    color: white; 
+    color: #6E6E6E; 
     font-family: 'Lato', sans-serif;
-/*    font-weight:   400;*/
-/*    font-style: italic;*/
-/*    font-weight: 400;*/
-/*    margin-top: -20px;*/
     margin-bottom: -20px;
 }
 
 .inner {
-/*    font-family: 'Droid Sans', sans-serif;*/
-    font-weight: 200;
+    color: #6E6E6E;
+    font-family: 'Lato', sans-serif;
     font-style: italic;
-/*    font-size: 23;*/
-/*    margin-bottom: -20px;*/
 }
 
 .dash {
@@ -122,10 +116,6 @@ label {
 .l-box-lrg {
     padding: 2em;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.is-center {
-    text-align: center;
 }
 
 
@@ -245,11 +235,14 @@ a.pure-button-primary {
     background-image: url("../img/tris-dark.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 1;
+    background-position: left;
+    z-index: 4;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
     width: 100%;
     height: 100%;
+    margin: auto;
+    /*margin-left: -10%;*/
     top: 0;
     left: 0;
     position: fixed !important;
@@ -272,10 +265,7 @@ a.pure-button-primary {
     text-align: center;
     text-transform: uppercase;
 }
-.splash#upper {
-    /*top: 0;*/
-}
-.splash#lower {
+.splash #lower {
     visibility: hidden;
     /*bottom: 0;*/
 }
@@ -313,8 +303,27 @@ a.pure-button-primary {
 /*    opacity: 0.8;*/
 }
 
-.splash-item-list {
-    width: auto;
+
+/***** Menu ********/
+
+button {
+    background-color: rgba(0,0,0,0);
+    outline: none;
+    border: none;
+}
+
+
+/**** Main Items *****/
+
+.splash-item button {
+    width: 100%;
+    height: 100%;
+}
+
+ul.splash-item-list {
+    position: relative;
+    display: block;
+    width: 100%;
     height: auto;
     list-style: none;
     padding: 0;
@@ -323,107 +332,78 @@ a.pure-button-primary {
 .splash-item {
     position: relative;
     opacity: 0;
-    height: 50px;
-    width: 50px;
-    margin: 8px;
-    margin-top: 30px; margin-bottom: 30px;
+    height: 60px;
+    width: 60px;
+    margin-top: 30px; 
+    margin-bottom: 30px; 
     top: -30px; /*gets set to 0 in intro animation */
     left: 50%;
-    transform: translateX(calc(-50% - 8px));
-    background-color: rgba(0,0,0,0);
-    border: white solid 2px;
+    transform: translateX(-50%);
     border-radius: 50%;
+    border: white solid 2px;
+    background-color: rgba(0,0,0,0);
+    
+    /*-ms-transition: all 0.1s linear;*/
+    /*-webkit-transition: all 0.1s linear;*/
+    /*transition: all 0.1s linear;*/
 }
-.splash-item#secondary {
-    height: 50px;
-    width: 50px;
-    margin: 23px;
-    margin-top: 20px; margin-bottom: 20px;
-    transform: translateX(calc(-50% - 23px));
-    border: #f0c480 solid 2px;
+
+.splash-item:hover {
+
+    -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
+
+/* the logo item */
 .splash-item#first {
-    /*opacity: 1;*/
-    border: none;
-    background-color: #f0c480;
     background-image: url("../img/logo-black.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: #f0c480;
+    border: none;
 }
-
 
 .splash-item i {
     color: white;
     font-size: 25px;
     transform: translateY(7%);
 }
-.splash-item#secondary i {
+
+/****** Social Menu ******/
+
+.social-item-list button {
+    width: 30px;
+    height: 30px;
+}
+
+ul.social-item-list {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.social-item-list li { 
+    display: inline; 
+    height: 45px;
+    width: 45px;
+    margin: 0px;
+    /*border-radius: 50%;*/
+    /*border: #f0c480 solid 2px;*/
+}
+
+.social-item-list i {
     color: #f0c480;
     font-size: 25px;
     transform: translateY(15%);
 }
 
 
-.splash-item button {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0);
-    outline: none;
-    border: none;
-}
-
-.hi-icon {
-    border-radius: 50%;
-    border: white solid 2px;
-    text-align: center;
-    z-index: 1;
-    color: #fff;
-
-    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
-    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
-    transition: transform 0.2s, opacity 0.2s;
-}
-
-.hi-icon:after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    content: '';
-    top: 0;
-    left: 0;
-    padding: 0;
-    box-shadow: 0 0 0px 2px #fff;
-    -webkit-box-sizing: content-box; 
-    -moz-box-sizing: content-box; 
-    box-sizing: content-box;
-
-    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
-    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
-    transition: transform 0.2s, opacity 0.2s;
-}
-
-#secondary .hi-icon:after {
-    box-shadow: 0 0 0px 2px #f0c480;
-}
-#first .hi-icon:after {
-    box-shadow: 0 0 0px 0px #f0c480;
-    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
-    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
-    transition: transform 0.2s, opacity 0.2s;
-}
-
-.hi-icon:hover {
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-    box-shadow: 0 0 0 2px;
-
-    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
-    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
-    transition: transform 0.2s, opacity 0.2s;
-}
 
 
 /*
@@ -458,6 +438,14 @@ a.pure-button-primary {
     transition: all 0.1s linear;
 }
 
+.item:hover .content-subhead .title {
+    color: white;
+
+    -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;   
+}
+
 .item:hover .expand-button {
     /*opacity: 1;*/
     
@@ -490,7 +478,7 @@ a.pure-button-primary {
     width: 100%;
     height: 100%;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9); 
+    background-color: rgba(255, 255, 255, 0.8); 
     
     -ms-transition: all 0.2s linear 0.02s;
     -webkit-transition: all 0.2s linear 0.02s;
@@ -501,20 +489,32 @@ a.pure-button-primary {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
     visibility: hidden;
-    top: 95px;
-    height: calc(100% - 95px);
-    width: calc(100% - 70px);
-    margin-left: 70px;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80%;
+    /*margin-left: 70px;*/
     min-height: 12%;
     z-index: 2;
 }
 
 /* This is the class used for the main content headers (<h2>) */
 .content-head {
-    font-weight: 400;
+    /*height: 10%;*/
+    /*width: 100%;*/
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-size: 170%;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
+    text-shadow: 
+      -1px -1px 1px #111;
+}
+.content-head#secondary {
+    display: inline-block;
+    font-family: 'FiraSansThin';
+    color: #f0c480;
 }
 
 /* This is a modifier class used when the content-head is inside a ribbon */
@@ -572,8 +572,17 @@ a.pure-button-primary {
 
 /* This is the class used for the footer */
 .footer {
-    background: #111;
-    height: 60px;
+    position: absolute;
+    width: 100%;
+    background-color: rgb(0,0,0,0);
+    bottom: 0;
+    height: auto;
+    z-index: 4;
+    font-family: 'FiraSansThin';
+    text-align: center;             
+    color: #d8d8d8;
+    font-size: 90%;
+    margin: 0;
 }
 
 /*
@@ -621,7 +630,7 @@ a.pure-button-primary {
         height: 40%;
     }
 */
-    .splash#lower {
+    .splash #lower {
         visibility: visible;
     }
 
@@ -636,12 +645,9 @@ a.pure-button-primary {
         transform: translateY(7%);
     }
 
-    .content-wrapper {
-        /* These styles are required for the "scroll-over" effect */
-        top: 125px;
-        height: calc(100% - 125px);
-        width: calc(100% - 100px);
-        margin-left: 100px;
+    .social-item-list button {
+        width: 45px;
+        height: 45px;
     }
 
 /*
@@ -667,7 +673,7 @@ a.pure-button-primary {
         padding-left: 20p
     }*/
 
-    .splash#lower {
+    .splash #lower {
         visibility: visible;
     }
 
@@ -682,11 +688,8 @@ a.pure-button-primary {
         transform: translateY(7%);
     }
 
-    .content-wrapper {
-        /* These styles are required for the "scroll-over" effect */
-        top: 125px;
-        height: calc(100% - 125px);
-        width: calc(100% - 100px);
-        margin-left: 100px;
+    .social-item-list button {
+        width: 45px;
+        height: 45px;
     }
 }

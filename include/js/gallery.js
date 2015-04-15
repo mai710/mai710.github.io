@@ -40,7 +40,7 @@ $(document).ready(function () {
     var $gallery = $('.pure-g.fullscreen-g');
     for(var i=0; i<images.length; i++) {
         var $new_item = $('<div/>', {
-            'class':'l-box pure-u-1 pure-u-md-1-4 pure-u-lg-1-4',
+            'class':'l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4',
 //            'style': 'top:'+screen.height+'px',
             'html': "<div class='item'>"
                         + "<div class='face' style='background-image:url("+images[i]+")'></div>"
@@ -63,50 +63,31 @@ $(document).ready(function () {
 /************** SPLASH MENU ANIMATIONS ****************/
 
 function ShowSplash(index, length) {          
-    // if(index === 0){
-    //     $('.splash-item').eq(index).animate({
-    //         marginTop: '0',
-    //         top: '0'
-    //     },110);
-    // }
-    // else{
-        $('.splash-item').eq(index).animate({
-            top: '0',
-            opacity: '1'
-        },110*(index+1));
-    // }
+    $('.splash-item').eq(index).animate({
+        top: '0',
+        opacity: '1',
+    },500);
     setTimeout(function () {   
         if (++index < length) ShowSplash(index, length);
-    }, 40);
+    }, 80);
 }
 
-function HideSplash(index, length) {  
-    $('.splash-item').eq(index).css('transform', 'translateX(0)');        
-    $('.splash-item').eq(index).animate({
-        left: '0',
-        // opacity: '0'
-    },250);
-    setTimeout(function () {   
-        if (++index < length) HideSplash(index, length);
-    }, 25);
-}
+// function HideSplash(index, length) {  
+//     $('.splash-item').eq(index).css('transform', 'translateX(0)');        
+//     $('.splash-item').eq(index).animate({
+//         left: '-30',
+//         // opacity: '0'
+//     },250);
+//     setTimeout(function () {   
+//         if (++index < length) HideSplash(index, length);
+//     }, 25);
+// }
 
 
-function HideSplashOld(index) {          
-    if(index === 0){
-        $('.splash-item').eq(index).animate({
-            marginTop: '-5%',
-        },110);
-    }
-    else{
-        $('.splash-item').eq(index).animate({
-            top: '-30px',
-            opacity: '0'
-        },100);
-    }
-    setTimeout(function () {   
-        if (--index >= 0) HideSplash(index);
-    }, 40);
+function HideSplash(index) {          
+    $('.splash-container').animate({
+        width: '20%'
+    }, 200);
 }
 
 /************** PORTFOLIO ANIMATIONS ****************/
@@ -118,7 +99,7 @@ function ShowPortfolio() {
     $('.content-wrapper').css('visibility', 'visible');
     $('.pure-g .l-box').each(function (index) {
         $(this).animate({
-            top: "0"
+            top: '0'
         },100*(index+1));
     });
         
@@ -141,10 +122,10 @@ function HidePortfolio() {
 
     $('.splash-item#gallery').click(function () {
         event.stopPropagation();
-        $('.splash-container .overlay').animate({
-            backgroundColor: 'rgba(0, 0, 0, 0.97)'
-        },900);
-        HideSplash(0, $('.splash-item').length);
+        // $('.splash-container .overlay').animate({
+        //     backgroundColor: 'rgba(0, 0, 0, 0.97)'
+        // },900);
+        HideSplash();
         window.setTimeout(ShowPortfolio, 300);
     });
 
