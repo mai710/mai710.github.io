@@ -343,17 +343,18 @@ ul.splash-item-list {
     border: white solid 2px;
     background-color: rgba(0,0,0,0);
     
+
     /*-ms-transition: all 0.1s linear;*/
     /*-webkit-transition: all 0.1s linear;*/
     /*transition: all 0.1s linear;*/
 }
 
-.splash-item:hover {
+/*.splash-item:hover {
 
     -ms-transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
     transition: all 0.1s linear;
-}
+}*/
 
 /* the logo item */
 .splash-item#first {
@@ -369,6 +370,36 @@ ul.splash-item-list {
     font-size: 25px;
     transform: translateY(7%);
 }
+.splash-item#art i {
+    color: #f0c480;
+}
+
+.splash-item-clicked {
+    background-color: #A68C64;
+}
+
+.splash-item-label {
+    position: absolute;
+    opacity: 0;
+    height: 50px;
+    width: auto;
+    left: 0;
+    margin-left: 80px;
+    margin-top: -50px;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.splash-item:hover .splash-item-label {
+    opacity: 1;
+    margin-left: 100px;
+}
+
 
 /****** Social Menu ******/
 
@@ -403,7 +434,9 @@ ul.social-item-list {
     transform: translateY(15%);
 }
 
-
+.social-item-list i:hover {
+    color: white;
+}
 
 
 /*

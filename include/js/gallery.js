@@ -120,7 +120,13 @@ function HidePortfolio() {
 
 //bind buttons
 
-    $('.splash-item#gallery').click(function () {
+    $('.splash-item').click(function(event) {
+        event.stopPropagation();
+        $(".splash-item").removeClass('splash-item-clicked');
+        $(this).addClass('splash-item-clicked');
+    });
+
+    $('.splash-item#work').click(function(event) {
         event.stopPropagation();
         // $('.splash-container .overlay').animate({
         //     backgroundColor: 'rgba(0, 0, 0, 0.97)'
