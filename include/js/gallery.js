@@ -84,19 +84,25 @@ function ShowSplash(index, length) {
 // }
 
 
-function HideSplash(index) {          
+function HideSplash(index) {     
+    $('.footer').css('visibility', 'hidden');     
     $('.splash-container').animate({
-        width: '20%'
+        width: '150px'
     }, 200);
+    $('.splash-item-list').animate({
+        left: '-50%',
+        transform: 'traslateX(50%)'
+    }, 200);
+    // $('.splash-item').animate({
+    //     width: '30px',
+    //     height: '30px'
+    // }, 200);
 }
 
 /************** PORTFOLIO ANIMATIONS ****************/
 
 function ShowPortfolio() {    
-    // $('.content-wrapper').animate({
-    //     top: "0"
-    // },250);
-    $('.content-wrapper').css('visibility', 'visible');
+    // $('.content-wrapper').css('visibility', 'visible');
     $('.pure-g .l-box').each(function (index) {
         $(this).animate({
             top: '0'
@@ -111,10 +117,7 @@ function HidePortfolio() {
             top: screen.height
         },200*(index+1));
     });
-    $('.content-wrapper').css('visibility', 'hidden');
-    // $('.content-wrapper').animate({
-    //     top: screen.height
-    // },1000);
+    // $('.content-wrapper').css('visibility', 'hidden');
 }
 
 

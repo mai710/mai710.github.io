@@ -244,8 +244,9 @@ a.pure-button-primary {
     margin: auto;
     /*margin-left: -10%;*/
     top: 0;
-    left: 0;
+    right: 0;
     position: fixed !important;
+    overflow: visible;
 }
 
 .splash-container .overlay {
@@ -265,10 +266,10 @@ a.pure-button-primary {
     text-align: center;
     text-transform: uppercase;
 }
-.splash #lower {
-    visibility: hidden;
+/*.splash #lower {*/
+    /*visibility: hidden;*/
     /*bottom: 0;*/
-}
+/*}*/
 
 /* This is the main heading that appears on the blue section */
 .splash-logo {
@@ -325,8 +326,10 @@ ul.splash-item-list {
     display: block;
     width: 100%;
     height: auto;
+    top: 100px;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .splash-item {
@@ -341,7 +344,7 @@ ul.splash-item-list {
     transform: translateX(-50%);
     border-radius: 50%;
     border: white solid 2px;
-    background-color: rgba(0,0,0,0);
+    background-color: black;
     
 
     /*-ms-transition: all 0.1s linear;*/
@@ -376,7 +379,7 @@ ul.splash-item-list {
 
 .splash-item-clicked {
     background-color: #A68C64;
-}
+}.splash-item
 
 .splash-item-label {
     position: absolute;
@@ -384,8 +387,8 @@ ul.splash-item-list {
     height: 50px;
     width: auto;
     left: 0;
-    margin-left: 80px;
-    margin-top: -50px;
+    margin-left: 70px;
+    margin-top: -47px;
     color: white;
     vertical-align: middle;
     text-align: center;
@@ -397,7 +400,7 @@ ul.splash-item-list {
 
 .splash-item:hover .splash-item-label {
     opacity: 1;
-    margin-left: 100px;
+    margin-left: 80px;
 }
 
 
@@ -411,7 +414,7 @@ ul.splash-item-list {
 ul.social-item-list {
     position: relative;
     width: 100%;
-    height: 45px;
+    height: 30px;
     top: 0;
     margin: 0;
     padding: 0;
@@ -421,8 +424,8 @@ ul.social-item-list {
 
 .social-item-list li { 
     display: inline; 
-    height: 45px;
-    width: 45px;
+    height: 30px;
+    width: 30px;
     margin: 0px;
     /*border-radius: 50%;*/
     /*border: #f0c480 solid 2px;*/
@@ -430,7 +433,7 @@ ul.social-item-list {
 
 .social-item-list i {
     color: #f0c480;
-    font-size: 25px;
+    font-size: 22px;
     transform: translateY(15%);
 }
 
@@ -521,11 +524,12 @@ ul.social-item-list {
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
-    visibility: hidden;
+    /*visibility: hidden;*/
     top: 0;
     right: 0;
     height: 100%;
-    width: 80%;
+    width: 100%;
+    padding-right: 150px;
     /*margin-left: 70px;*/
     min-height: 12%;
     z-index: 2;
@@ -614,7 +618,7 @@ ul.social-item-list {
     font-family: 'FiraSansThin';
     text-align: center;             
     color: #d8d8d8;
-    font-size: 90%;
+    font-size: 77%;
     margin: 0;
 }
 
@@ -668,19 +672,14 @@ ul.social-item-list {
     }
 
     .splash-item {
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
     }
 
     .splash-item i {
         color: white;
         font-size: 35px;
         transform: translateY(7%);
-    }
-
-    .social-item-list button {
-        width: 45px;
-        height: 45px;
     }
 
 /*
@@ -711,18 +710,13 @@ ul.social-item-list {
     }
 
     .splash-item {
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
     }
 
     .splash-item i {
         color: white;
         font-size: 35px;
         transform: translateY(7%);
-    }
-
-    .social-item-list button {
-        width: 45px;
-        height: 45px;
     }
 }
