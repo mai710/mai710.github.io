@@ -41,10 +41,9 @@ $(document).ready(function () {
     for(var i=0; i<images.length; i++) {
         var $new_item = $('<div/>', {
             'class':'l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4',
-//            'style': 'top:'+screen.height+'px',
             'html': "<div class='item'>"
                         + "<div class='face' style='background-image:url("+images[i]+")'></div>"
-                        + "<a class='expand-button' href=''></a>"
+                        + "<a class='expand-button' href=''><i class='fa fa-link'></i></a>"
                         + "<div class='curtain'>"
                             + "<div class='content-subhead-wrapper'>"
                                 + "<div class='content-subhead'>"
@@ -62,7 +61,7 @@ $(document).ready(function () {
 
 /************** SPLASH MENU ANIMATIONS ****************/
 
-function ShowSplash(index, length) {          
+function ShowSplash(index, length) { 
     $('.splash-item').eq(index).animate({
         top: '0',
         opacity: '1',
@@ -84,31 +83,63 @@ function ShowSplash(index, length) {
 // }
 
 
-function HideSplash(index) {     
+function HideSplash() {     
     $('.footer').css('visibility', 'hidden');     
-    $('.splash-container').animate({
-        width: '150px'
-    }, 200);
-    $('.splash-item-list').animate({
-        left: '-50%',
-        transform: 'traslateX(50%)'
-    }, 200);
-    // $('.splash-item').animate({
-    //     width: '30px',
-    //     height: '30px'
+    // $('.splash-container').animate({
+    //     width: '150px'
     // }, 200);
+    $('.splash-logo').animate({
+        top: '20px',
+        width: '80px',
+        height: '80px'
+    }, 400);
+    $('.splash-item').animate({
+        opacity: 0,
+    }, 100);
 }
 
 /************** PORTFOLIO ANIMATIONS ****************/
 
-function ShowPortfolio() {    
+function ShowPortfolioFromTop(index, length) {    
     // $('.content-wrapper').css('visibility', 'visible');
-    $('.pure-g .l-box').each(function (index) {
-        $(this).animate({
-            top: '0'
-        },100*(index+1));
-    });
-        
+    $('.pure-g .l-box').eq(index).animate({
+        top: '0',
+        opacity: 1
+    },100);
+    setTimeout(function () {   
+        if (++index < length) ShowPortfolioFromTop(index, length);
+    }, 40);
+}
+function ShowPortfolioFromBottom(index) {    
+    // $('.content-wrapper').css('visibility', 'visible');
+    $('.pure-g .l-box').eq(index).animate({
+        top: '0',
+        opacity: 1
+    },100);
+    setTimeout(function () {   
+        if (--index >= 0) ShowPortfolioFromBottom(index);
+    }, 40);
+}
+
+function HidePortfolioToTop(index, length) {    
+    // $('.content-wrapper').css('visibility', 'visible');
+    $('.pure-g .l-box').eq(index).animate({
+        top: '-300px',
+        opacity: 0
+    },100);
+    setTimeout(function () {   
+        if (++index < length) ShowPortfolioFromTop(index, length);
+    }, 40);
+}
+function HidePortfolioToBottom(index) {    
+    // $('.content-wrapper').css('visibility', 'visible');
+    $('.pure-g .l-box').eq(index).animate({
+        top: '300px',
+        opacity: 0
+    },100);
+    setTimeout(function () {   
+        if (--index >= 0) ShowPortfolioFromBottom(index);
+    }, 40);
 }
 
 function HidePortfolio() {    
@@ -123,27 +154,33 @@ function HidePortfolio() {
 
 //bind buttons
 
-    $('.splash-item').click(function(event) {
-        event.stopPropagation();
-        $(".splash-item").removeClass('splash-item-clicked');
-        $(this).addClass('splash-item-clicked');
-    });
+var firstClick = true;
+$('.splash-item').click(function(event) {
+    event.stopPropagation();
+    if(firstClick){
+        firstClick = false;
+        $('.splash-container .overlay').css('backgroundColor', 'rgba(0,0,0,0.95');
+        
+    }
+    $(".splash-item").removeClass('splash-item-clicked');
+    $(this).addClass('splash-item-clicked');
+});
 
-    $('.splash-item#work').click(function(event) {
-        event.stopPropagation();
-        // $('.splash-container .overlay').animate({
-        //     backgroundColor: 'rgba(0, 0, 0, 0.97)'
-        // },900);
-        HideSplash();
-        window.setTimeout(ShowPortfolio, 300);
-    });
+// $('.splash-item#work').click(function(event) {
+    // event.stopPropagation();
+    // $('.splash-container .overlay').animate({
+    //     backgroundColor: 'rgba(0, 0, 0, 0.97)'
+    // },900);
+    // HideSplash();
+    // window.setTimeout(ShowPortfolio, 300);
+// });
 
-    $('.splash-item#first').click(function () {
-        event.stopPropagation();
-        $('.splash-container .overlay').animate({
-            backgroundColor: 'rgba(0, 0, 0, 0.9)'
-        },300);
-        HidePortfolio();
-        ShowSplash(0, $('.splash-item').length);
-    });
+$('.splash-item#first').click(function () {
+    event.stopPropagation();
+    $('.splash-container .overlay').animate({
+        backgroundColor: 'rgba(0, 0, 0, 0.9)'
+    },300);
+    HidePortfolio();
+    ShowSplash(0, $('.splash-item').length);
+});
 

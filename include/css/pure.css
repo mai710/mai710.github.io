@@ -21,7 +21,7 @@ body {
     line-height: 1.7em;
     color: #7f8c8d;
     font-size: 13px;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 h1,
@@ -39,7 +39,8 @@ label {
 }
 
 .title {
-    color: #6E6E6E; 
+    /*color: #6E6E6E; */
+    color: white;
     font-family: 'Lato', sans-serif;
     margin-bottom: -20px;
 }
@@ -72,6 +73,7 @@ label {
 .pure-g.fullscreen-g {
     height: 100%;
     width: 100%;
+    /*padding-right: 150px;*/
 }
 
 .pure-g.splash-g {
@@ -81,14 +83,23 @@ label {
 /*    padding: 20px;*/
 }
 
+.section {
+    width: 100%;
+    /*padding-top: 120px;*/
+}
+.section#section0 {
+    /*position: absolute;*/
+}
+
 .l-box {
 /*    visibility: hidden;*/
     position: relative;
-    background-color: #242424;
+    opacity: 0;
     margin-top: auto;
     margin-bottom: 0;
-    top: 100%;
+    top: 300px;
     height: 50%;
+    /*padding: 10px;*/
     
 /*
     -ms-transition: all 0.2s linear 0.02s;
@@ -236,17 +247,14 @@ a.pure-button-primary {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    z-index: 4;
+    /*z-index: 4;*/
     overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
     width: 100%;
     height: 100%;
     margin: auto;
-    /*margin-left: -10%;*/
     top: 0;
     right: 0;
     position: fixed !important;
-    overflow: visible;
 }
 
 .splash-container .overlay {
@@ -257,7 +265,7 @@ a.pure-button-primary {
 
 .splash {
     /* absolute center .splash within .splash-container */
-    position: absolute;
+    position: relative;
     width: 100%;
     height: auto;
     margin: auto;
@@ -273,12 +281,12 @@ a.pure-button-primary {
 
 /* This is the main heading that appears on the blue section */
 .splash-logo {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 50px; left: 0; bottom: 0; right: 0;
+    top: 150px; left: 0; bottom: 0; right: 0;
     z-index: 5;
     background-image: url("../img/logo-gold.png");
     background-size: contain;
@@ -316,7 +324,9 @@ button {
 
 /**** Main Items *****/
 
-.splash-item button {
+.splash-item a {
+    position: relative;
+    display: block;
     width: 100%;
     height: 100%;
 }
@@ -370,8 +380,8 @@ ul.splash-item-list {
 
 .splash-item i {
     color: white;
-    font-size: 25px;
-    transform: translateY(7%);
+    font-size: 28px;
+    transform: translateY(50%);
 }
 .splash-item#art i {
     color: #f0c480;
@@ -383,12 +393,12 @@ ul.splash-item-list {
 
 .splash-item-label {
     position: absolute;
+    display: block;
     opacity: 0;
     height: 50px;
     width: auto;
-    left: 0;
-    margin-left: 70px;
-    margin-top: -47px;
+    left: 70px;
+    top: 25%;
     color: white;
     vertical-align: middle;
     text-align: center;
@@ -400,7 +410,7 @@ ul.splash-item-list {
 
 .splash-item:hover .splash-item-label {
     opacity: 1;
-    margin-left: 80px;
+    left: 80px;
 }
 
 
@@ -445,6 +455,12 @@ ul.social-item-list {
 /*
  * -- CONTENT STYLES --
  */
+.item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .item:hover .curtain {
     height: 28%;
     /*opacity: 0;*/
@@ -457,8 +473,7 @@ ul.social-item-list {
 .item:hover .face {
     -webkit-filter: sepia(0);
     filter: sepia(0);
-    opacity: 1;
-    /*zoom: 15;*/
+    height: 90%;
 
     -ms-transition: all 0.15s linear;
     -webkit-transition: all 0.15s linear;
@@ -466,8 +481,8 @@ ul.social-item-list {
 }
 
 .item:hover .content-subhead-wrapper {
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    /*opacity: 0;*/
+    background-color: black;
 
     -ms-transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
@@ -483,7 +498,7 @@ ul.social-item-list {
 }
 
 .item:hover .expand-button {
-    /*opacity: 1;*/
+    opacity: 1;
     
     -ms-transition: all 0.2s linear 0.15s;
     -webkit-transition: all 0.2s linear 0.15s;
@@ -494,12 +509,10 @@ ul.social-item-list {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: black;
+    /*background-color: black;*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border: white solid 0.2px;
-
     -webkit-filter: sepia(0.8);
     filter: sepia(0.8);
     
@@ -510,11 +523,12 @@ ul.social-item-list {
 
 .curtain {
     position: absolute;
-    display: inline;
+    display: block;
     width: 100%;
     height: 100%;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.8); 
+    border-top: #F2C784 solid 3px;
+    /*background-color: rgba(158, 136, 106, 0.92);*/
     
     -ms-transition: all 0.2s linear 0.02s;
     -webkit-transition: all 0.2s linear 0.02s;
@@ -523,9 +537,9 @@ ul.social-item-list {
 
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
-    position: absolute;
+    position: relative;
     /*visibility: hidden;*/
-    top: 0;
+    top: 0%;
     right: 0;
     height: 100%;
     width: 100%;
@@ -563,7 +577,8 @@ ul.social-item-list {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.85);
+    /*background-color: rgba(158, 136, 106, 0.92);*/
 
     -ms-transition: opacity 0.1s linear;
     -webkit-transition: opacity 0.1s linear;
@@ -586,20 +601,33 @@ ul.social-item-list {
 .expand-button {
     position: absolute;
     opacity: 0;
-    background-image: url(../img/work/expand.png);  
-    background-size: cover;
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+/*
     -ms-transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+    transition: all 0.1s linear;*/
+}
+.expand-button:hover {
+    background-color: black;
+
+ /*   -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;*/
+}
+.expand-button i {
+    font-size: 50px;
+    color: white;
+    transform: translateY(30%);
 }
 
 .ribbon {
@@ -644,8 +672,8 @@ ul.social-item-list {
         padding: 10px;
     }
     
-    /* We can align the menu header to the left, but float the
-    menu items to the right. */
+     We can align the menu header to the left, but float the
+    menu items to the right. 
     .home-menu {
         text-align: left;
     }
@@ -667,7 +695,7 @@ ul.social-item-list {
         height: 40%;
     }
 */
-    .splash #lower {
+   /* .splash #lower {
         visibility: visible;
     }
 
@@ -680,7 +708,7 @@ ul.social-item-list {
         color: white;
         font-size: 35px;
         transform: translateY(7%);
-    }
+    }*/
 
 /*
      We remove the border-separator assigned to .l-box-lrg 
@@ -697,15 +725,15 @@ ul.social-item-list {
  * of the mobile and tablet styles.
  */
 @media (min-width: 78em) {
-    .home-menu .pure-menu-heading {
+    /*.home-menu .pure-menu-heading {
         padding: 10px;
-    }
+    }*/
  
    /* .splash {
         padding-left: 20p
     }*/
 
-    .splash #lower {
+    /*.splash #lower {
         visibility: visible;
     }
 
@@ -717,6 +745,6 @@ ul.social-item-list {
     .splash-item i {
         color: white;
         font-size: 35px;
-        transform: translateY(7%);
-    }
+        transform: translateY(37%);
+    }*/
 }

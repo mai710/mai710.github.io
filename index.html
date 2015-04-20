@@ -48,80 +48,144 @@
 
     <div class="splash-container">
         <div class="overlay"></div>
-    
-        <div class="splash"> 
-            <ul class="splash-item-list">
-                <li class="splash-item" id="first">
-                    <button></button>
-                </li>
-                <li class="splash-item" id="about">
-                    <button>
-                        <i class="fa fa-user"></i>
-                    </button>
-                    <div class="splash-item-label title">about</div>
-                </li>
-                <li class="splash-item" id="work">
-                    <button>
-                        <i class="fa fa-code"></i>
-                    </button>
-                    <div class="splash-item-label title">work</div>
-                </li>
-                <li class="splash-item" id="contact">
-                    <button>
-                        <i class="fa fa-comments"></i>
-                    </button>
-                    <div class="splash-item-label title">contact</div>
-                </li>
-                <li class="splash-item" id="art">
-                    <button>
-                        <i class="fa fa-paint-brush"></i>
-                    </button>
-                    <div class="splash-item-label title">gallery</div>
-                </li>
-            </ul>
-    
-        </div>
-        
-        <div class="footer">
-            <ul class="social-item-list">
-                <li>
-                    <button>
-                        <i class="fa fa-linkedin"></i>
-                    </button>   
-                </li>
-                <li>
-                    <button>
-                        <i class="fa fa-github-alt"></i>
-                    </button>   
-                </li>
-                <li>
-                    <button>
-                        <i class="fa fa-twitter"></i>
-                    </button>   
-                </li>
-            </ul>
-            ©2015 MAI EL-AWINI.
-        </div>
+        <div class="splash-logo" id="menu"></div>
+    </div>  
 
-    </div>
-    
-    
-    <div class="content-wrapper" id="portfolio">
-        <!-- <h2 class="content-head">project</h2><h2 class="content-head" id="secondary">portfolio</h2> -->
-        <div class="pure-g fullscreen-g">
+    <div id="fullpage">
+        <div class="section " id="section0">
+
+                <div class="splash"> 
+                    <ul class="splash-item-list">
+                        
+                        <li class="splash-item" id="about">
+                            <a href="#page-about">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <div class="splash-item-label title">about</div>
+                        </li>
+                        <li class="splash-item" id="work">
+                            <a href="#page-work">
+                                <i class="fa fa-code"></i>
+                            </a>
+                            <div class="splash-item-label title">work</div>
+                        </li>
+                        <li class="splash-item" id="contact">
+                            <a href="#page-contact">
+                                <i class="fa fa-comments"></i>
+                            </a>
+                            <div class="splash-item-label title">contact</div>
+                        </li>
+                        <li class="splash-item" id="art">
+                            <a href="#page-gallery">
+                                <i class="fa fa-paint-brush"></i>
+                            </a>
+                            <div class="splash-item-label title">gallery</div>
+                        </li>
+                    </ul>
             
-        
+                </div>
+                
+                <div class="footer">
+                    <ul class="social-item-list">
+                        <li>
+                            <button>
+                                <i class="fa fa-linkedin"></i>
+                            </button>   
+                        </li>
+                        <li>
+                            <button>
+                                <i class="fa fa-github-alt"></i>
+                            </button>   
+                        </li>
+                        <li>
+                            <button>
+                                <i class="fa fa-twitter"></i>
+                            </button>   
+                        </li>
+                    </ul>
+                    ©2015 MAI EL-AWINI.
+                </div>
+
+    
         </div>
+
         
+
+        <div class="section" id="section2">
+
+            <!-- <div class="content-wrapper" id="portfolio"> -->
+                <div class="pure-g fullscreen-g"></div>
+            <!-- </div> -->
+
+        </div>
+
+<div class="section" id="section1">
+            <h2>ABOUT</h2>
+        </div>
+
+        <div class="section" id="section3">
+        </div>
+
+        <div class="section" id="section4">
+        </div>
+
     </div>
-
-
     
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-<script type="text/javascript" src="include/js/gallery.js"></script>
+    <script type="text/javascript" src="include/js/gallery.js"></script>
+    <script type="text/javascript" src="include/js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="include/js/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                // sectionsColor: ['#151515', '#c28415', '#151515', '#151515'],
+                anchors: ['page-splash', 'page-about', 'page-work', 'page-contact', 'page-gallery'],
+                scrollOverflow: true,
+                navigation: true,
+                navigationPosition: 'left',
+                recordHistory: false,
+                scrollingSpeed: 1000,
+                paddingTop: '120px',
+                menu: '#menu',
+                
+                afterLoad:  function(anchorLink, index) {
+                    if(index == 1) {
+                        ShowSplash(0, 8);
+                    }    
+                },  
+
+                onLeave: function(index, nextIndex, direction) {
+
+                    if(index == 1 && direction == 'down') {
+                        HideSplash();
+                        ShowPortfolioFromTop(0,8);
+                    }
+                    else if(index == 2 && direction == 'up') {
+                        $('.splash-item').removeClass('splash-item-clicked');
+                        $('.splash-logo').animate({
+                            top: '150px',
+                            width: '70px',
+                            height: '70px'
+                        }, 300);
+                    }    
+                    else if(index == 3 && direction == 'up') {
+                        ShowPortfolioFromBottom(8);
+                    } 
+
+                    else if(index == 2 && direction == 'up') {
+                        HidePortfolioToBottom(8);       
+                    }
+                    else if(index == 2 && direction == 'down') {
+                        HidePortfolioToTop(0,8);       
+                    }       
+                }
+            });
+
+        });
+    </script>
 
 </body>
 
