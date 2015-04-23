@@ -1,0 +1,497 @@
+/******** General **********/
+
+@font-face {
+    font-family: 'FiraSansEight'; /*a name to be used later*/
+    src: url(fonts/FiraSans-Eight.otf); /*URL to font*/
+}
+@font-face {
+    font-family: 'FiraSansThin'; /*a name to be used later*/
+    src: url(fonts/FiraSans-Thin.otf); /*URL to font*/
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+body {
+    line-height: 1.7em;
+    color: #7f8c8d;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    color: white;
+}
+
+.p {
+    color: #6E6E6E;
+}
+
+button {
+    background-color: rgba(0,0,0,0);
+    outline: none;
+    border: none;
+}
+
+ /* made an empty div with this class above content */
+.square { 
+    padding-bottom: 100%; 
+}
+.content {
+    position: absolute;
+    background-color: blue;
+    top: 0;  bottom: 0;  left: 0;  right: 0;
+}
+
+
+/******** Splash *********/
+
+.splash-container {
+    background-image: url("../img/tris-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    /*border-top: #F2C784 solid 3px; */
+    /*z-index: 4;*/
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    top: 0;
+    right: 0;
+    position: fixed !important;
+}
+
+.splash-container .overlay {
+    background: rgba(0, 0, 0, 0.9);   
+    width: 100%;
+    height: 100%;
+}
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    position: absolute;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    /*padding-left: 20px;*/
+    top: 10%; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.splash-item {
+    position: relative;
+    opacity: 0;
+    height: 60px;
+    width: 60px;
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    top: -30px; /*gets set to 0 in intro animation */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: white solid 2px;
+    background-color: black;
+}
+
+.splash-item a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.splash-item i {
+    color: white;
+    font-size: 28px;
+    transform: translateY(50%);
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+ul.splash-item-list {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    top: 70px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.splash-item-label {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    height: 50px;
+    width: auto;
+    left: 70px;
+    top: 25%;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.splash-item:hover .splash-item-label {
+    opacity: 1;
+    left: 90px;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    background-color: rgb(0,0,0,0);
+    bottom: 0;
+    height: auto;
+    z-index: 4;
+    font-family: 'FiraSansThin';
+    text-align: center;             
+    color: #d8d8d8;
+    font-size: 77%;
+    margin: 0;
+}
+
+.social-item-list button {
+    width: 30px;
+    height: 30px;
+}
+
+
+ul.social-item-list {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.social-item-list li { 
+    display: inline; 
+    height: 30px;
+    width: 30px;
+    margin: 0px;
+    /*border-radius: 50%;*/
+    /*border: #f0c480 solid 2px;*/
+}
+
+.social-item-list i {
+    color: #f0c480;
+    font-size: 22px;
+    transform: translateY(15%);
+}
+
+.social-item-list i:hover {
+    color: white;
+}
+
+/********* Menu ********/
+
+.menu {
+    position: absolute;
+    display: block;
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: auto;
+    text-align: center;
+}
+
+.menu-strip {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    top: 0;
+    z-index: 4;
+    background-color: #F2C784;
+    box-shadow: 0 -1px 8px black;
+}
+.menu-tab {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 90px;
+    background-color: #F2C784;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    z-index: 4; 
+}
+
+.splash-logo {
+	position: absolute;
+	margin-left: auto;
+    margin-right: auto;
+    top: 10%; left: 0; bottom: 0; right: 0;
+    opacity: 1;
+    background-image: url("../img/logo-black.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    border-radius: 50%;
+    border: black solid 2px;
+}
+
+.menu .splash-item {
+    opacity: 1;
+    border: none;
+    border-radius: 0;
+    border-bottom: rgba(255, 255, 255, 0.14) solid 1px;
+}
+
+.menu .splash-item i {
+    transform: translateY(8%);
+}
+
+.menu .splash-item:hover i {
+    transform: scale(1.2);
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.menu ul.splash-item-list {
+    display: none;
+    top: 0;
+    height: 374px;
+    padding-top: 40px;
+    background-color: black;
+    border: rgb(242, 199, 132) solid 2px;
+}
+/******** About *********/
+
+
+
+/******* Portfolio ***********/
+
+.title {
+    /*color: #6E6E6E; */
+    color: white;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: -20px;
+}
+
+.inner {
+    color: #6E6E6E;
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+}
+
+.dash {
+    color: #F2C784;
+    margin-top: 10px;
+    margin-bottom: -15px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.pure-g.fullscreen-g {
+    height: 100%;
+    width: 100%;
+    /*padding-right: 150px;*/
+}
+
+.l-box {
+/*    visibility: hidden;*/
+    position: relative;
+    opacity: 0;
+    margin-top: auto;
+    margin-bottom: 0;
+    top: 300px;
+    height: 100%;
+    /*padding: 10px;*/
+    
+/*
+    -ms-transition: all 0.2s linear 0.02s;
+    -webkit-transition: all 0.2s linear 0.02s;
+    transition: all 0.2s linear 0.02s;
+*/
+}
+
+.fp-controlArrow.fp-prev {
+    border-right-color: rgba(242, 199, 132, 0.3);
+}
+.fp-controlArrow.fp-next {
+    border-left-color: rgba(242, 199, 132, 0.3);
+}
+.fp-controlArrow.fp-prev:hover {
+    border-right-color: rgba(242, 199, 132, 1);
+}
+.fp-controlArrow.fp-next:hover {
+    border-left-color: rgba(242, 199, 132, 1);
+}
+.fp-slidesNav ul li a span {
+    background-color: #F2C784;
+}
+
+.item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.item:hover .curtain {
+    height: 20%;
+    /*opacity: 0;*/
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.item:hover .face {
+    -webkit-filter: sepia(0);
+    filter: sepia(0);
+    height: 90%;
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.item:hover .content-subhead-wrapper {
+    /*opacity: 0;*/
+    background-color: black;
+
+    -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.item:hover .content-subhead .title {
+    color: white;
+
+    -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;   
+}
+
+.item:hover .expand-button {
+    opacity: 1;
+    
+    -ms-transition: all 0.2s linear 0.15s;
+    -webkit-transition: all 0.2s linear 0.15s;
+    transition: all 0.2s linear 0.15s;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-filter: sepia(0.8);
+    filter: sepia(0.8);
+    
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.curtain {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    
+    -ms-transition: all 0.2s linear 0.02s;
+    -webkit-transition: all 0.2s linear 0.02s;
+    transition: all 0.2s linear 0.02s;
+}
+
+.content-subhead-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    -ms-transition: opacity 0.1s linear;
+    -webkit-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;    
+}
+
+/* This is the class used for the content sub-headers (<h3>) */
+.content-subhead {
+    position: absolute;
+    text-align: center;
+    color: white;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.expand-button {
+    position: absolute;
+    opacity: 0;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+}
+
+.expand-button:hover {
+    background-color: black;
+}
+
+.expand-button i {
+    font-size: 50px;
+    color: white;
+    transform: translateY(30%);
+}
+/******* Contact *********/
+
+
+
+/****** Tablets + *********/
+
+@media (min-width: 48em) {
+
+    /* We increase the body font size */
+    body {
+        font-size: 16px;
+    }
+}
+
+
+/******* Desktops + *******/
+
+@media (min-width: 78em) {
+
+}

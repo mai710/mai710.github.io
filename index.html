@@ -26,88 +26,49 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="include/css/jquery.fullPage.css">
-    <link rel="stylesheet" href="include/css/pure.css">
+    <link rel="stylesheet" href="include/css/main.css">
     
 </head>
 
 
 <body>
-    
-    
-    <!-- <div class="header">
-        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="">Home</a>    
-
-            <ul class="pure-menu-list">
-
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Work</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
-            </ul>
-        </div>
-    </div> -->
 
     <div class="menu">
-         <!-- <div class="splash">    -->
-            <ul class="splash-item-list">
-                <li class="splash-item" id="about">
-                    <a href="#page-about">
-                        <i class="fa fa-user"></i>
-                    </a>
-                    <!-- <div class="splash-item-label title">about</div> -->
-                </li>
-                <li class="splash-item" id="work">
-                    <a href="#page-work">
-                        <i class="fa fa-code"></i>
-                    </a>
-                    <!-- <div class="splash-item-label title">work</div> -->
-                </li>
-                <li class="splash-item" id="contact">
-                    <a href="#page-contact">
-                        <i class="fa fa-comments"></i>
-                    </a>
-                    <!-- <div class="splash-item-label title">contact</div> -->
-                </li>
-                <li class="splash-item" id="gallery">
-                    <a href="#page-gallery">
-                        <i class="fa fa-paint-brush"></i>
-                    </a>
-                    <!-- <div class="splash-item-label title">gallery</div> -->
-                </li>
-            </ul>    
-            <div class="menu-tab">       
-                <div class="top-menu splash-logo"></div>
-            </div>
-        <!-- </div> -->
-    </div>
-      
+        <ul class="splash-item-list">
+            <li class="splash-item" id="about">
+                <a href="#page-about">
+                    <i class="fa fa-user"></i>
+                </a>
+            </li>
+            <li class="splash-item" id="work">
+                <a href="#page-work">
+                    <i class="fa fa-code"></i>
+                </a>
+            </li>
+            <li class="splash-item" id="contact">
+                <a href="#page-contact">
+                    <i class="fa fa-comments"></i>
+                </a>
+            </li>
+            <li class="splash-item" id="gallery">
+                <a href="#page-gallery">
+                    <i class="fa fa-paint-brush"></i>
+                </a>
+            </li>
+        </ul>    
+        <div class="menu-tab">       
+            <div class="splash-logo"></div>
+        </div>
+    </div> 
     <div class="menu-strip"></div>
+
+
 
     <div class="splash-container">
         <div class="overlay"></div>
-         
-
-        <!-- <div class="top-menu menu-item" id="about">
-            <a href="#page-about">
-                <i class="fa fa-user"></i>
-            </a>
-        </div>
-        <div class="top-menu menu-item" id="work">
-            <a href="#page-about">
-                <i class="fa fa-code"></i>
-            </a>
-        </div>
-        <div class="top-menu menu-item" id="contact">
-            <a href="#page-about">
-                <i class="fa fa-comments"></i>
-            </a>
-        </div>
-        <div class="top-menu menu-item" id="gallery">
-            <a href="#page-about">
-                <i class="fa fa-paint-brush"></i>
-            </a>
-        </div> -->
     </div>  
+
+
 
     <div id="fullpage">
         <div class="section " id="section0">
@@ -237,7 +198,7 @@
                                 },200)}, 1000);
                             $('.menu').addClass('side-menu');
                         }
-                        
+
                         if(nextIndex == 2) {
                             HideSplash();
                             setTimeout(function() { ToggleTopMenu() }, 500);
