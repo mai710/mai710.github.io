@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="include/css/jquery.fullPage.css">
     <link rel="stylesheet" href="include/css/pure.css">
     
 </head>
@@ -46,9 +47,66 @@
         </div>
     </div> -->
 
+    <div class="menu">
+         <!-- <div class="splash">    -->
+            <ul class="splash-item-list">
+                <li class="splash-item" id="about">
+                    <a href="#page-about">
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <!-- <div class="splash-item-label title">about</div> -->
+                </li>
+                <li class="splash-item" id="work">
+                    <a href="#page-work">
+                        <i class="fa fa-code"></i>
+                    </a>
+                    <!-- <div class="splash-item-label title">work</div> -->
+                </li>
+                <li class="splash-item" id="contact">
+                    <a href="#page-contact">
+                        <i class="fa fa-comments"></i>
+                    </a>
+                    <!-- <div class="splash-item-label title">contact</div> -->
+                </li>
+                <li class="splash-item" id="gallery">
+                    <a href="#page-gallery">
+                        <i class="fa fa-paint-brush"></i>
+                    </a>
+                    <!-- <div class="splash-item-label title">gallery</div> -->
+                </li>
+            </ul>    
+            <div class="menu-tab">       
+                <div class="top-menu splash-logo"></div>
+            </div>
+        <!-- </div> -->
+    </div>
+      
+    <div class="menu-strip"></div>
+
     <div class="splash-container">
         <div class="overlay"></div>
-        <div class="splash-logo" id="menu"></div>
+         
+
+        <!-- <div class="top-menu menu-item" id="about">
+            <a href="#page-about">
+                <i class="fa fa-user"></i>
+            </a>
+        </div>
+        <div class="top-menu menu-item" id="work">
+            <a href="#page-about">
+                <i class="fa fa-code"></i>
+            </a>
+        </div>
+        <div class="top-menu menu-item" id="contact">
+            <a href="#page-about">
+                <i class="fa fa-comments"></i>
+            </a>
+        </div>
+        <div class="top-menu menu-item" id="gallery">
+            <a href="#page-about">
+                <i class="fa fa-paint-brush"></i>
+            </a>
+        </div> -->
     </div>  
 
     <div id="fullpage">
@@ -75,7 +133,7 @@
                             </a>
                             <div class="splash-item-label title">contact</div>
                         </li>
-                        <li class="splash-item" id="art">
+                        <li class="splash-item" id="gallery">
                             <a href="#page-gallery">
                                 <i class="fa fa-paint-brush"></i>
                             </a>
@@ -109,18 +167,19 @@
     
         </div>
 
-        
+        <div class="section" id="section1">
+            <h2>ABOUT</h2>
+        </div>
 
         <div class="section" id="section2">
 
-            <!-- <div class="content-wrapper" id="portfolio"> -->
+            <div class="slide" id="slide1">
                 <div class="pure-g fullscreen-g"></div>
-            <!-- </div> -->
+            </div>
+            <div class="slide" id="slide2   ">
+                <div class="pure-g fullscreen-g"></div>
+            </div>
 
-        </div>
-
-<div class="section" id="section1">
-            <h2>ABOUT</h2>
         </div>
 
         <div class="section" id="section3">
@@ -143,44 +202,104 @@
             $('#fullpage').fullpage({
                 // sectionsColor: ['#151515', '#c28415', '#151515', '#151515'],
                 anchors: ['page-splash', 'page-about', 'page-work', 'page-contact', 'page-gallery'],
-                scrollOverflow: true,
-                navigation: true,
-                navigationPosition: 'left',
                 recordHistory: false,
-                scrollingSpeed: 1000,
-                paddingTop: '120px',
+                scrollingSpeed: 900,
+                slidesNavigation: true,
+                slidesNavPosition: 'bottom',
+                paddingTop: '0px',
                 menu: '#menu',
                 
                 afterLoad:  function(anchorLink, index) {
                     if(index == 1) {
-                        ShowSplash(0, 8);
-                    }    
+                        ShowSplash(0, $('.splash-item').length);
+                    }  
+                    else if(index == 2) {
+
+                    }  
                 },  
 
                 onLeave: function(index, nextIndex, direction) {
 
-                    if(index == 1 && direction == 'down') {
-                        HideSplash();
-                        ShowPortfolioFromTop(0,8);
+                    //page-splash
+                    if(index == 1) {
+                        if($('.menu').hasClass('side-menu') == false) {
+                            $('.splash-container .overlay').animate({
+                                backgroundColor: 'rgba(0,0,0,0.95)'
+                            }, 300);
+                            setTimeout(function(){
+                                $('.menu').animate({
+                                    top: '-100px'
+                                },300)}, 200);
+                            setTimeout(function(){
+                                $('.menu').css('left', '55px');
+                                $('.menu').animate({
+                                    top: '0px'
+                                },200)}, 1000);
+                            $('.menu').addClass('side-menu');
+                        }
+                        
+                        if(nextIndex == 2) {
+                            HideSplash();
+                            setTimeout(function() { ToggleTopMenu() }, 500);
+                        }
+                        else if(nextIndex == 3) {
+                            $('.pure-g .l-box').css('top', '300px');
+                            ShowPortfolioFromTop(0,8);
+                        }
                     }
-                    else if(index == 2 && direction == 'up') {
-                        $('.splash-item').removeClass('splash-item-clicked');
-                        $('.splash-logo').animate({
-                            top: '150px',
-                            width: '70px',
-                            height: '70px'
-                        }, 300);
-                    }    
-                    else if(index == 3 && direction == 'up') {
-                        ShowPortfolioFromBottom(8);
+
+                    //page-about
+                    else if(index == 2) {
+                        if(direction == 'down') {
+                            $('.pure-g .l-box').css('top', '300px');
+                            ShowPortfolioFromTop(0,8);
+                        }
+                        else if(direction == 'up'){
+                            ToggleTopMenu();
+                            $('.splash-item').removeClass('splash-item-clicked');
+                            $('.menu').removeClass('side-menu');
+                            $('.menu').animate({
+                                left: '50%'
+                            },700);
+                            $('.splash-container .overlay').animate({
+                                backgroundColor: 'rgba(0,0,0,0.9)'
+                            }, 300);
+                        }
+                    }
+
+                    //page-work
+                    else if(index == 3) {
+                        HidePortfolio();
+                        if(direction == 'down') {
+                            //load about page
+                        }
+                        else if(direction == 'up'){
+                            //load contact
+                        }
+                            
+                    }
+
+                    //page-contact
+                    else if(index == 4) {
+                        if(direction == 'down') {
+                            //load gallery
+                        }
+                        else if(direction == 'up') {
+                            $('.pure-g .l-box').css('top', '-300px');
+                            setTimeout(ShowPortfolioFromBottom(8), 1000);
+                        }
+                        
+                    }
+
+                    // page-gallery        
+                    else if(index == 5) {
+                        if(direction == 'up') {
+                            //load contact
+                        }
+                        
                     } 
 
-                    else if(index == 2 && direction == 'up') {
-                        HidePortfolioToBottom(8);       
-                    }
-                    else if(index == 2 && direction == 'down') {
-                        HidePortfolioToTop(0,8);       
-                    }       
+                          
                 }
             });
 

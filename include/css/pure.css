@@ -83,14 +83,6 @@ label {
 /*    padding: 20px;*/
 }
 
-.section {
-    width: 100%;
-    /*padding-top: 120px;*/
-}
-.section#section0 {
-    /*position: absolute;*/
-}
-
 .l-box {
 /*    visibility: hidden;*/
     position: relative;
@@ -98,7 +90,7 @@ label {
     margin-top: auto;
     margin-bottom: 0;
     top: 300px;
-    height: 50%;
+    height: 100%;
     /*padding: 10px;*/
     
 /*
@@ -129,7 +121,21 @@ label {
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-
+.fp-controlArrow.fp-prev {
+    border-right-color: rgba(242, 199, 132, 0.3);
+}
+.fp-controlArrow.fp-next {
+    border-left-color: rgba(242, 199, 132, 0.3);
+}
+.fp-controlArrow.fp-prev:hover {
+    border-right-color: rgba(242, 199, 132, 1);
+}
+.fp-controlArrow.fp-next:hover {
+    border-left-color: rgba(242, 199, 132, 1);
+}
+.fp-slidesNav ul li a span {
+    background-color: #F2C784;
+}
 
 /*
  * -- PURE FORM STYLES --
@@ -242,11 +248,23 @@ a.pure-button-primary {
  * This is the blue top section that appears on the page.
  */
 
+ /* made an empty div with this class above content */
+.square { 
+    padding-bottom: 100%; 
+}
+.content {
+    position: absolute;
+    background-color: blue;
+    top: 0;  bottom: 0;  left: 0;  right: 0;
+}
+
+
 .splash-container {
     background-image: url("../img/tris-dark.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
+    /*border-top: #F2C784 solid 3px; */
     /*z-index: 4;*/
     overflow: hidden;
     width: 100%;
@@ -265,12 +283,12 @@ a.pure-button-primary {
 
 .splash {
     /* absolute center .splash within .splash-container */
-    position: relative;
+    position: absolute;
     width: 100%;
     height: auto;
     margin: auto;
     /*padding-left: 20px;*/
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 10%; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
 }
@@ -279,19 +297,81 @@ a.pure-button-primary {
     /*bottom: 0;*/
 /*}*/
 
-/* This is the main heading that appears on the blue section */
-.splash-logo {
-    width: 70px;
-    height: 70px;
+
+/****** Top Menu *******/
+.menu {
     position: absolute;
+    display: block;
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: auto;
+    text-align: center;
+}
+
+.menu-strip {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    top: 0;
+    z-index: 4;
+    background-color: #F2C784;
+    box-shadow: 0 -1px 8px black;
+}
+.menu-tab {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 90px;
+    background-color: #F2C784;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    z-index: 4; 
+}
+
+.top-menu {
+    position: absolute;
+    opacity: 1;
+    width: 60px;
+    height: 60px;
     margin-left: auto;
     margin-right: auto;
-    top: 150px; left: 0; bottom: 0; right: 0;
+    top: 10%; left: 0; bottom: 0; right: 0;
     z-index: 5;
-    background-image: url("../img/logo-gold.png");
+}
+.menu-item#about { left: -200px; }
+.menu-item#work { left: -400px; }
+.menu-item#contact { left: 200px; }
+.menu-item#gallery { left: 400px; }
+
+.menu-item {
+    display: none;
+    top: 15px;
+    border-radius: 50%;
+    border: white solid 2px;
+    background-color: black;
+    text-align: center;
+}
+
+.menu-item i {
+    color: white;
+    font-size: 28px;
+    transform: translateY(50%);
+}
+
+.splash-logo {
+    opacity: 1;
+    background-image: url("../img/logo-black.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    border-radius: 50%;
+    border: black solid 2px;
 }
 
 .splash-head {
@@ -336,10 +416,19 @@ ul.splash-item-list {
     display: block;
     width: 100%;
     height: auto;
-    top: 100px;
+    top: 70px;
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.menu ul.splash-item-list {
+    display: none;
+    top: 0;
+    height: 374px;
+    padding-top: 40px;
+    background-color: black;
+    border: rgb(242, 199, 132) solid 2px;
 }
 
 .splash-item {
@@ -355,11 +444,20 @@ ul.splash-item-list {
     border-radius: 50%;
     border: white solid 2px;
     background-color: black;
-    
+}
 
-    /*-ms-transition: all 0.1s linear;*/
-    /*-webkit-transition: all 0.1s linear;*/
-    /*transition: all 0.1s linear;*/
+.menu .splash-item {
+    opacity: 1;
+    border: none;
+    border-radius: 0;
+    border-bottom: rgba(255, 255, 255, 0.14) solid 1px;
+}
+.menu .splash-item:hover i {
+    transform: scale(1.2);
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
 }
 
 /*.splash-item:hover {
@@ -369,23 +467,22 @@ ul.splash-item-list {
     transition: all 0.1s linear;
 }*/
 
-/* the logo item */
-.splash-item#first {
-    background-image: url("../img/logo-black.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: #f0c480;
-    border: none;
-}
 
 .splash-item i {
     color: white;
     font-size: 28px;
     transform: translateY(50%);
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
 }
-.splash-item#art i {
+.menu .splash-item i {
+    transform: translateY(8%);
+}
+/*.splash-item#gallery i {
     color: #f0c480;
-}
+}*/
 
 .splash-item-clicked {
     background-color: #A68C64;
@@ -410,9 +507,8 @@ ul.splash-item-list {
 
 .splash-item:hover .splash-item-label {
     opacity: 1;
-    left: 80px;
+    left: 90px;
 }
-
 
 /****** Social Menu ******/
 
@@ -420,6 +516,7 @@ ul.splash-item-list {
     width: 30px;
     height: 30px;
 }
+
 
 ul.social-item-list {
     position: relative;
@@ -462,7 +559,7 @@ ul.social-item-list {
 }
 
 .item:hover .curtain {
-    height: 28%;
+    height: 20%;
     /*opacity: 0;*/
 
     -ms-transition: all 0.15s linear;
@@ -527,7 +624,7 @@ ul.social-item-list {
     width: 100%;
     height: 100%;
     bottom: 0;
-    border-top: #F2C784 solid 3px;
+    /*border-top: #F2C784 solid 3px;*/
     /*background-color: rgba(158, 136, 106, 0.92);*/
     
     -ms-transition: all 0.2s linear 0.02s;
