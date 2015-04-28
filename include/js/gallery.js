@@ -18,7 +18,7 @@ var titles = [
     "EXPLORE ENTERPRISE",
     "WHITE ELEPHANT"
 ];
-var sub_titles = [
+var subTitles = [
     "Intrepid Museum", 
     "Mazda", 
     "Bloomingdale's NYC", 
@@ -29,55 +29,116 @@ var sub_titles = [
     "Animat Habitat"
 ];
 
-$(document).ready(function () {
+
+var mqDesktop = window.matchMedia( "(min-width: 78em)" );
+var mqTabletLandscape = window.matchMedia( "(min-width: 64em)" );
+var mqTabletPortrait = window.matchMedia( "(min-width: 48em)" );
+
+
+$(document).ready(function() {
+    BuildPortfolio();
+    // mqDesktop.addListener(function(changed) {
+    //     BuildPortfolio();
+    //     console.log('JS READY');
+    //     setTimeout(function(){
+    //         $('#fullpage').fullpage.reBuild(true);
+    //     }, 500); 
+    // });
+    // mqTabletLandscape.addListener(function(changed) {
+    //     BuildPortfolio();
+    //     console.log('JS READY');
+    //     setTimeout(function(){
+    //         $('#fullpage').fullpage.reBuild(true);
+    //     }, 500); 
+    // });
+    // mqTabletPortrait.addListener(function(changed) {
+    //     BuildPortfolio();
+    //     console.log('JS READY');
+    //     setTimeout(function(){
+    //         $('#fullpage').fullpage.reBuild(true);
+    //     }, 500);   
+    // });
+});
+
+function BuildPortfolio() {
     
-    //animate splash menu
-    // ShowSplash_();
-    ShowSplash(0, $('.splash .splash-item').length);
-    
-    //construct gallery items
-    
-    var $gallery1 = $('#slide1 .pure-g.fullscreen-g#work-portfolio');
-    for(var i=0; i<images.length/2; i++) {
+    //construct gallery item HTML
+
+    var $gallery = $('.gallery');
+    var $galleryTablet = $('.gallery-tablet');
+    var $galleryMobile = $('.gallery-mobile');
+
+
+    var openSection = "<div class='slide'>"
+                        + "<div class='pure-g portfolio'>";
+
+    var itemHtml =          "<div class='item'>"
+                                + "<div class='face' style='background-color:black'>"
+                                    + "<div class='curtain'>"
+                                        + "<div class='content'>"
+                                            + "<a href='' class='sub-header'>View Details</a>"
+                                        + "</div>"
+                                    + "</div>"
+                                + "</div>"
+                                + "<div class='tab'>"
+                                    +"<div class='pointer'></div>"
+                                    + "<div class='content-subhead-wrapper'>"
+                                        + "<div class='content-subhead'>"
+                                            + "<h3 class='header'></h3>"
+                                            + "<h2 class='dash'>___</h2>"
+                                            + "<h4 class='sub-header'></h4>"
+                                        + "</div>"
+                                    + "</div>"
+                                + "</div>"
+                            + "</div>";
+
+    var closeSection =  "</div>"
+                    + "</div>";
+
+
+
+    var sectionLength = 4;
+    var sectionLengthTablet = 2;
+    var sectionLengthMobile = 1;
+
+    // if(mqDesktop.matches || mqTabletLandscape.matches) {
+    //     sectionLength = 4;
+    // }
+    // else if(mqTabletPortrait.matches) {
+    //     sectionLength = 2;       
+    // }
+
+    for(var i=0; i<images.length; i++) {
+        //start a new slide if needed
+        if(i % sectionLength == 0) {
+            if(i > 0){
+                console.log('CLOSE');
+                $(closeSection).appendTo($gallery);
+            }
+            console.log('OPEN');    
+            $(openSection).appendTo($gallery);
+        }
+
+        //create an item
         var $new_item = $('<div/>', {
             'class':'l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4',
-            'html': "<div class='item'>"
-                        + "<div class='face' style='background-image:url("+images[i]+")'></div>"
-                        + "<a class='expand-button' href=''><i class='fa fa-link'></i></a>"
-                        + "<div class='curtain'>"
-                            + "<div class='content-subhead-wrapper'>"
-                                + "<div class='content-subhead'>"
-                                    + "<h3 class='title'>"+titles[i]+"</h3>"
-                                    + "<h2 class='dash'>___</h2>"
-                                    + "<h4 class='inner'>"+sub_titles[i]+"</h4>"
-                                + "</div>"
-                            + "</div>"
-                        + "</div>"
-                    + "</div>"
-        }).appendTo($gallery1);
-    }
-    var $gallery2 = $('#slide2 .pure-g.fullscreen-g#work-portfolio');
-    for(var i=images.length/2; i<images.length; i++) {
-        console.log('item' + i);
-        var $new_item = $('<div/>', {
-            'class':'l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4',
-            'html': "<div class='item'>"
-                        + "<div class='face' style='background-image:url("+images[i]+")'></div>"
-                        + "<a class='expand-button' href=''><i class='fa fa-link'></i></a>"
-                        + "<div class='curtain'>"
-                            + "<div class='content-subhead-wrapper'>"
-                                + "<div class='content-subhead'>"
-                                    + "<h3 class='title'>"+titles[i]+"</h3>"
-                                    + "<h2 class='dash'>___</h2>"
-                                    + "<h4 class='inner'>"+sub_titles[i]+"</h4>"
-                                + "</div>"
-                            + "</div>"
-                        + "</div>"
-                    + "</div>"
-        }).appendTo($gallery2);
+            'html': itemHtml
+        });
+        $new_item.appendTo($('.pure-g.portfolio').last());
+
+        //set the item's content
+        $('.face').last().css('backgroundImage', 'url('+images[i]+')');
+        $('.header').last().text(titles[i]);
+        $('.sub-header').last().text(subTitles[i]);
+
+        //if this is the last item, close the slide
+        if(i == images.length -1){
+            console.log('CLOSE');
+            $(closeSection).appendTo($gallery);
+        }
     }
 
-});
+}
 
 /************** SPLASH MENU ANIMATIONS ****************/
 
@@ -208,34 +269,17 @@ function HidePortfolio() {
 
 //bind buttons
 
-$('.splash-item').click(function(event) {
+$('.splash-item#about').click(function(event) {
     event.stopPropagation();
-    HideMenu(0, $('.menu .splash-item').length);
-
+    $('#fullpage').fullpage.moveTo(2);
+});
+$('.splash-item#portfolio').click(function(event) {
+    event.stopPropagation();
+    $('#fullpage').fullpage.moveTo(3);
+});
+$('.splash-item#contact').click(function(event) {
+    event.stopPropagation();
+    $('#fullpage').fullpage.moveTo(4);
 });
 
-// $('.splash-item#work').click(function(event) {
-    // event.stopPropagation();
-    // $('.splash-container .overlay').animate({
-    //     backgroundColor: 'rgba(0, 0, 0, 0.97)'
-    // },900);
-    // HideSplash();
-    // window.setTimeout(ShowPortfolio, 300);
-// });
-
-// $('.splash-item#first').click(function () {
-//     event.stopPropagation();
-//     $('.splash-container .overlay').animate({
-//         backgroundColor: 'rgba(0, 0, 0, 0.9)'
-//     },300);
-//     HidePortfolio();
-//     ShowSplash(0, $('.splash-item').length);
-// });
-
-$('.splash-logo').click(function(event) {
-    if($('.menu').hasClass('side-menu')) {
-        // $('.menu ul.splash-item-list').slideToggle(300);
-        ToggleMenu();
-    }
-});
 

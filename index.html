@@ -26,139 +26,109 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="include/css/jquery.fullPage.css">
-    <link rel="stylesheet" href="include/css/main.css">
+    <link rel="stylesheet" href="include/css/theme.css">
     
 </head>
 
 
 <body>
 
-    <div class="menu">
-        <button class="splash-item-container">
-            <div class="splash-item" id="about">
-            <a href="#page-about">
-                <i class="fa fa-user"></i>
-            </a>
-        </div>
-        <div class="splash-item" id="work">
-            <a href="#page-work">
-                <i class="fa fa-code"></i>
-            </a>
-        </div>
-        <div class="splash-item" id="contact">
-            <a href="#page-contact">
-                <i class="fa fa-comments"></i>
-            </a>
-        </div>
-        </button>
-        <button class="splash-logo icon"><span class="icon-effect"></span></button>
-    </div> 
-    <div class="menu-strip"></div>
-
-
-
-    <div class="splash-container">
-        <div class="overlay"></div>
-    </div>  
-
-
-
     <div id="fullpage">
-        <div class="section " id="section0">
 
-                <div class="splash"> 
-                    <ul class="splash-item-list">
-                        
-                        <li class="splash-item" id="about">
-                            <a href="#page-about">
-                                <i class="fa fa-user"></i>
-                            </a>
-                            <div class="splash-item-label title">about</div>
-                        </li>
-                        <li class="splash-item" id="work">
-                            <a href="#page-work">
-                                <i class="fa fa-code"></i>
-                            </a>
-                            <div class="splash-item-label title">work</div>
-                        </li>
-                        <li class="splash-item" id="contact">
-                            <a href="#page-contact">
-                                <i class="fa fa-comments"></i>
-                            </a>
-                            <div class="splash-item-label title">contact</div>
-                        </li>
-                        <li class="splash-item" id="gallery">
-                            <a href="#page-gallery">
-                                <i class="fa fa-paint-brush"></i>
-                            </a>
-                            <div class="splash-item-label title">gallery</div>
-                        </li>
-                    </ul>
-            
-                </div>
-                
-                <div class="footer">
-                    <ul class="social-item-list">
-                        <li>
-                            <button>
-                                <i class="fa fa-linkedin"></i>
-                            </button>   
-                        </li>
-                        <li>
-                            <button>
-                                <i class="fa fa-github-alt"></i>
-                            </button>   
-                        </li>
-                        <li>
-                            <button>
-                                <i class="fa fa-twitter"></i>
-                            </button>   
-                        </li>
-                    </ul>
-                    ©2015 MAI EL-AWINI.
-                </div>
+        <!-- SPLASH SECTION -->
+        <div class="section" id="section0">
 
-    
-        </div>
-
-        <div class="section" id="section1">
-            <div class="pure-g fullscreen-g">
-                <div class="l-box about-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                    <div class='about-item' id="primary">
-                        <div class='content-subhead'>
-                            <h3 class='title'>Developer</h3>
-                            <h2 class='dash'>___</h2>
-                            <h4 class='inner'>Some random text about what makes me a great developer. Some random text about what makes me a great developer.</h4>
+            <div class="pure-g splash">
+                <div class="l-box pure-u-1-2 pure-u-md-1-2 pure-u-lg-1-2"> 
+                    <div class="splash-item" id="logo">
+                        <div class="square"></div>
+                        <div class="content gold-bg"></div>
+                    </div>
+                    <div class="splash-item" id="about">
+                        <div class="third"></div>
+                        <div class="content white-bg">
+                            <h2 class="title black">About</h2>
+                        </div>
+                    </div>
+                    <div class="splash-item" id="contact">
+                        <div class="third"></div>
+                        <div class="content black-bg">
+                            <i class="fa fa-comments white"></i>
+                            <h2 class="title white">Contact</h2>
                         </div>
                     </div>
                 </div>
-                <div class="l-box about-box pure-u-1 pure-u-md-1-2 pure-u-lg-3-4">
-                    <div class='about-item' id="secondary">
-                        <div class='content-subhead'>
-                            <h3 class='title'>Developer</h3>
-                            <h2 class='dash'>___</h2>
-                            <h4 class='inner'>Some random text about what makes me a great developer.</h4>
+                <div class="l-box pure-u-1-2 pure-u-md-1-2 pure-u-lg-1-2">
+                    <div class="splash-item" id="portfolio">
+                        <div class="third-inverse"></div>
+                        <div class="content black-bg">
+                            <i class="fa fa-code white"></i>
+                            <h2 class="title white">Portfolio</h2>
+                        </div>
+                    </div>
+                    <div class="splash-item" id="art">
+                        <div class="square"></div>
+                        <div class="content gold-bg">
+                            <i class="fa fa-paint-brush black"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            
+            <div class="banner black-bg"></div>    
+
+        </div>
+
+
+        <!-- ABOUT SECTION -->
+        <div class="section" id="section1">
+            <div class="pure-g about">
+                <div class="l-box pure-u-2-3 pure-u-md-2-3 pure-u-lg-2-3"> 
+                    <div class="content">
+                        <div class="about-item white-bg">
+                            <h2 class="title black"></h2>
+                        </div>
+                        <div class="about-item gold-bg">
+                            <h2 class="title white"></h2>
+                        </div>
+                        <div class="about-item white-bg">
+                            <h2 class="title black"></h2>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="banner white-bg"></div>
+
         </div>
 
+        <!-- PORTFOLIO SECTION -->
         <div class="section" id="section2">
 
-            <div class="slide" id="slide1">
-                <div class="pure-g fullscreen-g" id="work-portfolio"></div>
+            <div class="gallery"></div>
+
+            <!-- <div class="slide" id="slide1">
+                <div class="pure-g portfolio"></div>
             </div>
             <div class="slide" id="slide2">
-                <div class="pure-g fullscreen-g" id="work-portfolio"></div>
+                <div class="pure-g portfolio"></div>
             </div>
+            <div class="slide" id="slide3">
+                <div class="pure-g portfolio"></div>
+            </div>
+            <div class="slide" id="slide4">
+                <div class="pure-g portfolio"></div>
+            </div> -->
+
+            <div class="banner black-bg"></div>
 
         </div>
 
+        <!-- CONTACT SECTION -->
         <div class="section" id="section3">
-        </div>
 
-        <div class="section" id="section4">
+            <div class="banner white-bg"></div>
+        
         </div>
 
     </div>
@@ -172,108 +142,26 @@
     <script type="text/javascript" src="include/js/jquery.slimscroll.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            console.log('HTML READY');
             $('#fullpage').fullpage({
-                sectionsColor: ['rgba(0,0,0,0)', 'white', 'rgba(0,0,0,0)', '#262626', 'white'],
-                anchors: ['page-splash', 'page-about', 'page-work', 'page-contact', 'page-gallery'],
+                sectionsColor: ['white', '#262626', 'white', '#262626'],
+                // anchors: ['home', 'about', 'portfolio', 'contact'],
                 recordHistory: false,
                 scrollingSpeed: 900,
                 slidesNavigation: true,
                 slidesNavPosition: 'bottom',
+                controlArrowColor: '#F2C784',
                 paddingTop: '0px',
-                menu: '#menu',
                 
-                afterLoad:  function(anchorLink, index) {
-                    if(index == 1) {
-                        HideMenuInstant();
-                        $('.menu').css('left', '50%');
-                        $('.menu').css('top', '10%');
-                        $('.menu').fadeIn(200);
-                        setTimeout(function(){
-                            ShowSplash(0, $('.splash-item').length);
-                        }, 100);
-                    }  
-                    else if(index == 2) {
+                afterReBuild: function(resize) {
+                    console.log('AFTER REBUILD');
+                },    
 
-                    }  
+                afterLoad:  function(anchorLink, index) {
+                    
                 },  
 
                 onLeave: function(index, nextIndex, direction) {
-
-                    //page-splash
-                    if(index == 1) {
-                        if($('.menu').hasClass('side-menu') == false) {
-                            
-                        }
-
-                        if(nextIndex == 2) {
-                            HideSplash();
-                        }
-                        else if(nextIndex == 3) {
-                            // $('.pure-g#work-portfolio .l-box').css('top', '300px');
-                            // ShowPortfolioFromTop(0,8);
-                        }
-                    }
-
-                    //page-about
-                    else if(index == 2) {
-                        if(direction == 'down') {
-                            // $('.pure-g#work-portfolio .l-box').css('top', '300px');
-                            // ShowPortfolioFromTop(0,8);
-                        }
-                        else if(direction == 'up'){
-                            if($('.menu').hasClass('side-menu')){
-                                $('.menu').removeClass('side-menu');
-                                
-                                $('.menu').animate({
-                                    top: '-200px',
-                                },300, function(){
-                                    $('.menu').fadeOut('fast');
-                                });
-                            }
-                            // ToggleMenuTab();
-                            // $('.splash-item').removeClass('splash-item-clicked');
-                            // $('.menu').removeClass('side-menu');
-                            // $('.menu').animate({
-                            //     left: '50%'
-                            // },700);
-                            // $('.splash-container .overlay').animate({
-                            //     backgroundColor: 'rgba(0,0,0,0.9)'
-                            // }, 300);
-                        }
-                    }
-
-                    //page-work
-                    else if(index == 3) {
-                        // HidePortfolio();
-                        if(direction == 'down') {
-                            //load about page
-                        }
-                        else if(direction == 'up'){
-                            //load contact
-                        }
-                            
-                    }
-
-                    //page-contact
-                    else if(index == 4) {
-                        if(direction == 'down') {
-                            //load gallery
-                        }
-                        else if(direction == 'up') {
-                            // $('.pure-g#work-portfolio .l-box').css('top', '-300px');
-                            // setTimeout(ShowPortfolioFromBottom(8), 1000);
-                        }
-                        
-                    }
-
-                    // page-gallery        
-                    else if(index == 5) {
-                        if(direction == 'up') {
-                            //load contact
-                        }
-                        
-                    } 
-
                           
                 }
             });
