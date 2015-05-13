@@ -1,12 +1,21 @@
-/******** General **********/
+/******** Fonts **********/
 
 @font-face {
-    font-family: 'FiraSansEight'; /*a name to be used later*/
-    src: url(fonts/FiraSans-Eight.otf); /*URL to font*/
+    font-family: 'FiraSansEight'; 
+    src: url(fonts/FiraSans/FiraSans-Eight.otf); 
 }
 @font-face {
-    font-family: 'FiraSans-UltraLightItalic'; /*a name to be used later*/
-    src: url(fonts/FiraSans-UltraLightItalic.otf); /*URL to font*/
+    font-family: 'FiraSans-UltraLightItalic'; 
+    src: url(fonts/FiraSans/FiraSans-UltraLightItalic.otf); 
+}
+@font-face {
+    font-family: 'Sansation';
+    src: url(fonts/sansation/Sansation-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'WCManoNegra';
+    src: url(fonts/WC-Mano-Negra-Bta/WCManoNegraBta.otf);
 }
 
 * {
@@ -15,13 +24,12 @@
     box-sizing: border-box;
 }
 
-/*
- * -- BASE STYLES --
- * Most of these are inherited from Base, but I want to change a few.
- */
+
+/******** General **********/
+
 body {
     line-height: 1.7em;
-    color: #7f8c8d;
+    background-color: #262626;
     font-size: 13px;
     overflow: hidden;
 }
@@ -34,10 +42,6 @@ h5,
 h6,
 label {
     color: white;
-}
-
-.p {
-    color: #6E6E6E;
 }
 
 button {
@@ -93,12 +97,50 @@ button {
     bottom: 0;
     width: 100%;
     height: 10%;
-    border-top: #F2C784 solid 4px;
+    /*z-index: 4;*/
+    border-top: #F2C784 solid 3px;
+    box-shadow: 0px -1px 10px -2px black; 
+}
+
+.home {
+    position: absolute;
+    visibility: hidden;
+    cursor: pointer;
+    bottom: 5%;
+    transform: translateY(55%);
+    right: 12px;
+    background-image: url('../img/logo-gold-small.png');
+    background-position: center;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    border: #D3B380 solid 2px;
+    /*border-radius: 50%;*/
+}
+
+.section-header {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    bottom: 0;
+    z-index: 4;
+    width: 100%;
+    height: 10%;
+    padding-top: 12px;
+    padding-left: 12px;
+    font-family: 'WCManoNegra', sans-serif;
+    font-size: 13px;
+}
+.section-header h1{
+    height: 100%;
+    margin: 0;
 }
 
 .pure-g {
-    width: 80%;
-    height: 80%;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    letter-spacing: normal;
     margin: auto;
     top:0; bottom: 0; left: 0; right: 0; 
 }
@@ -111,8 +153,36 @@ button {
     height: 100%;
 }
 
+.fp-tableCell {
+    vertical-align: top;
+}
+.fp-controlArrow.fp-prev {
+    visibility: hidden;
+    border-width: 20px 15px 20px 0; 
+}
+.fp-controlArrow.fp-next {
+    visibility: hidden;
+    border-width: 20px 0 20px 15px; 
+}
+
+.fp-slidesNav ul li a span {
+    background-color: #D3B380;
+}
+.fp-slidesNav {
+    left:auto;
+    right: 0;
+}
+.fp-slidesNav.bottom {
+  bottom: 1%;
+}
+
+
 /******** Splash *********/
 
+.pure-g.splash {
+    position: absolute;
+    width: 80%;
+}
 
 .splash-item {
 	position: relative;
@@ -124,8 +194,8 @@ button {
 }
 
 .title {
-    font-family: 'FiraSans-UltraLightItalic', sans-serif;
-    font-size: 21px;
+    font-family: 'WCManoNegra';
+    font-size: 25px;
 }
 
 /*Logo*/
@@ -138,7 +208,7 @@ button {
 
 /*About*/
 #about .content { border: #262626 solid 3px; padding-bottom: 10px;}
-#about .title { padding-top: 10px; margin: 0; }
+#about .title { padding-top: 13px; margin: 0; }
 
 /*Portfolio*/
 .splash-item#portfolio { padding-bottom: 10px; }
@@ -153,7 +223,7 @@ button {
 
 /*Art*/
 .splash-item#art { width: 50%; left: 50%; }
-#art .content { border-bottom-right-radius: 50%; }
+/*#art .content { border-bottom-right-radius: 50%; }*/
 #art .content i {font-size: 24px; }
 
 .splash .l-box {
@@ -169,46 +239,60 @@ button {
 	font-size: 22px;
 }
 
+.footer {
+    vertical-align: bottom;
+}
+
+.footer i {
+    font-size: 20px;
+    transform: translateY(15%);
+}
+
+.footer i:hover {
+    color: white;
+}
 
 /******** About *********/
 
-.pure-g.about {
-    position: relative;
-    width: 100%;
+.about p {
+    margin: 0;
+    text-align: center;
+    font-family: 'FiraSansEight', sans-serif;
+    font-size: 23px;
+    line-height: 1.6
 }
 
-.pure-g.about .content {
-    flex-direction: column;
-    align-items: flex-start;
+.about i.quote {
+    font-size: 33px;
 }
 
-.about-item {
-    position: relative;
-    width: 100%;
-    height: 20%;
-    margin-top: 20px;
-
+.about i.logo {
+    font-size: 35px;
+    border: #D3B380 solid 4px;
+    border-radius: 50%;
 }
-.about-item:nth-child(2) { width: 90%; }
-.about-item:nth-child(3) { width: 80%; }
 
-
-/******* Portfolio ***********/
+.about .content {
+    width: 40%;
+}
+/******* Portfolio *********/
 
 
 .pure-g.portfolio {
-    width: 80%;
-    height: 70%;
+    /*width: calc(80% + 20px);*/
+    /*width: 100%;*/
+    /*margin-top: -5%;*/
 }
 
 .portfolio .l-box {
     height: 25%;
-    padding: 10px;
+    border: #262626 solid 1px;
+    /*padding: 10px;*/
 }
 
 .header {
     font-family: 'Lato', sans-serif;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.5;
     color: #262626;
     margin: 10px;
@@ -217,14 +301,14 @@ button {
 .sub-header {
     font-family: 'Lato', sans-serif;
     font-style: italic;
-    font-size: 10px;
+    font-size: 13px;
     color: #6E6E6E;
     margin: 10px;
 }
 
-a.sub-header {
+button.sub-header {
     color: white;
-    text-decoration: white solid 1px;
+    text-decoration: underline;
 }
 
 .dash {
@@ -248,16 +332,8 @@ a.sub-header {
     border-color: transparent;
     border-left-color: white;
 }
-
-.fp-controlArrow.fp-prev {
-    border-width: 20px 15px 20px 0; 
-}
-.fp-controlArrow.fp-next {
-    border-width: 20px 0 20px 15px; 
-}
-
-.fp-slidesNav ul li a span {
-    background-color: #F2C784;
+.pointer#black{
+    border-left-color: #262626;
 }
 
 .item {
@@ -265,49 +341,13 @@ a.sub-header {
     width: 100%;
     height: 100%;
 }
-
-.item:hover .tab {
-    width: 50%;
-    opacity: 1;
-
-    -ms-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
-
-.item:hover .face {
-    width: 50%;
-
-    -ms-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
-
-.item:hover .curtain {
-    opacity: 1;
-    background-color: rgba(0,0,0, 0.85);
-
-    -ms-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
-
-.item:hover .content-subhead-wrapper {
-    /*opacity: 0;*/
-    /*background-color: black;*/
-
-    -ms-transition: all 0.1s linear;
-    -webkit-transition: all 0.1s linear;
-    transition: all 0.1s linear;
-}
-
-.item:hover .content {
+/*.item:hover .content {
     opacity: 1;
     
     -ms-transition: all 0.2s linear 0.15s;
     -webkit-transition: all 0.2s linear 0.15s;
     transition: all 0.2s linear 0.15s;
-}
+}*/
 
 .face {
     position: absolute;
@@ -322,16 +362,32 @@ a.sub-header {
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
 }
+.item:hover .face {
+    width: 50%;
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
 
 .curtain {
     position: relative;
+    background-color: rgba(0,0,0, 0.75);
     width: 100%;
     height: 100%;
     opacity: 0;
 
-    -ms-transition: all 0.25s linear;
-    -webkit-transition: all 0.25s linear;
-    transition: all 0.25s linear;
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+.item:hover .curtain {
+    opacity: 1;
+    
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
 }
 
 .tab {
@@ -341,11 +397,19 @@ a.sub-header {
     height: 100%;
     left: 0;
     opacity: 0;
-    border-left: #262626 solid 4px;
+    /*border-left: #262626 solid 4px;*/
 
     /*padding-left: 10px;*/
     /*padding-right: 10px;*/
     
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+.item:hover .tab {
+    width: 50%;
+    opacity: 1;
+
     -ms-transition: all 0.15s linear;
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
@@ -358,12 +422,11 @@ a.sub-header {
     top: 0;
     /*background-color: rgba(0, 0, 0, 0.85);*/
 
-    -ms-transition: opacity 0.1s linear;
-    -webkit-transition: opacity 0.1s linear;
-    transition: opacity 0.1s linear;    
+    /*-ms-transition: opacity 0.15s linear;*/
+    /*-webkit-transition: opacity 0.15s linear;*/
+    /*transition: opacity 0.15s linear;    */
 }
 
-/* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
     position: absolute;
     text-align: center;
@@ -373,58 +436,223 @@ a.sub-header {
     transform: translateY(-50%);
 }
 
-.expand-button {
-    position: absolute;
-    width: 40px;
-    height: 45px;
-    background-color: transparent;
-    text-align: center;
-    text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+/******* Portfolio Expanded ********/
+
+.pure-g.portfolio-expanded {
+    width: 100%;
+    height: 100%;
 }
 
-.expand-button i {
-    font-size: 30px;
-    color: white;
-    transform: translateY(30%);
+.l-box-1 {
+    background-size: cover;
+    background-position: center;
+    -webkit-filter: saturate(2.2);
+    filter: saturate(2.2);
 }
+
+.l-box-2 {
+    /*width: auto;*/
+    padding: 5%;
+}
+
+.expanded {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #D3B380;
+    /*background-color: rgba(0,0,0,0.5);*/
+    border-radius: 50%; 
+    z-index: 4;
+}
+
+.expanded p {
+    font-family: 'FiraSansEight', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.expanded .header {
+    display: inline;
+    font-size: 17px;
+    color: #D3B380; 
+    margin-right: 0;
+}
+
+.expanded .sub-header {
+    display: inline;
+    font-size: 18px;
+    color: white;
+}
+
+.icon-container {
+    display: flex;
+}
+
+.tag {
+    position: relative;
+    display: inline;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 45px;
+    margin: 5px; 
+    -webkit-filter: sepia(0);
+    filter: sepia(0);
+}
+.tag#xcode { background-image: url('../img/tags/xcode.png'); }
+.tag#eclipse { background-image: url('../img/tags/eclipse.png'); }
+.tag#win8 { background-image: url('../img/tags/win8.png'); }
+.tag#unity { background-image: url('../img/tags/unity.png'); }
+.tag#vuforia { background-image: url('../img/tags/vuforia.png'); }
+.tag#ar { background-image: url('../img/tags/ar.png'); }
+.tag#kinect { background-image: url('../img/tags/kinect.png'); }
+.tag#sdp { background-image: url('../img/tags/sdp.png'); }
+
+.tag span {
+    opacity: 0;
+    position: absolute;
+    width: 40px;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -20px;
+    color: #D3B380;
+    text-align: center;
+    border-bottom: 1px solid #D3B380;
+    height: 25px;
+    line-height: 29px;
+    text-align: center;
+
+    -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.tag:hover span {
+    opacity: 1;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -20px;
+    z-index: 999;
+
+    -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.tag span:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -12px;
+    width: 0; height: 0;
+    border-top: 1px solid #D3B380;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+.tag span:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    width: 0; height: 0;
+    border-top: 6px solid #D3B380;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+
+
+.store-link {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 65px;
+    margin: 5px; 
+    border: white solid 1px;
+}
+.store-link#apple { background-image: url('../img/tags/apple-store.png'); }
+.store-link#apple-comingsoon { background-image: url('../img/tags/apple-comingsoon.png'); }
+.store-link#android { background-image: url('../img/tags/android-store.png'); }
+
+.store-link:hover {
+    -webkit-filter: sepia(1);
+    filter: sepia(1);
+}
+
+.line {
+    width: 100%;
+    height: 0;
+    border-bottom: #D3B380 solid 1px;
+}
+
 /******* Contact *********/
 
 
 
 
 
-/****** Tablets (Portrait) + *********/
+/*****************************************
+/////////// Tablets (Portrait) + /////////
+*****************************************/
 
 @media screen and (min-width: 48em) {
+
+/******* General *********/
+
+    .section-header {
+        font-size: 25px;
+        padding-top: 26px;
+    }
+
+    .fp-slidesNav.bottom {
+        bottom: 17px;
+    }
+
+/******* Splash *********/
 
     .pure-g.splash {
         width: 50%;
     }
 
+/******* Portfolio *********/
+
     .title {
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .portfolio .l-box {
         height: 50%;
+        padding: 10px;
+        border: none;
+    }
+
+    .expanded .l-box-1 {
+        height: 25%;
     }
 
     #portfolio .content i {font-size: 90px; }
     #contact .content i {font-size: 40px; }
     #art .content i {font-size: 40px; }
 
-    .fp-controlArrow.fp-prev {
+    /*.fp-controlArrow.fp-prev {
+        display: block;
         border-width: 38.5px 34px 38.5px 0; 
     }
     .fp-controlArrow.fp-next {
+        display: block;
         border-width: 38.5px 0 38.5px 34px; 
-    }
+    }*/
 
     .header {
         font-size: 20px;
@@ -440,6 +668,10 @@ a.sub-header {
         border-width: 0px 20px 20px 20px;
         border-color: transparent;
         border-bottom-color: white;
+    }
+    .pointer#black {
+        border-color: transparent;
+        border-bottom-color: #262626;
     }
 
     .tab {
@@ -461,13 +693,29 @@ a.sub-header {
         width: 100%;
         height: 30%;
     }
+
+/******* Portfolio Expanded *********/
+
+    .expanded p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
 }
 
-/****** Tablets (Landscape) + *********/
+/*****************************************
+/////////// Tablets (Landscape) + ////////
+*****************************************/
 
 @media screen and (min-width: 64em) {
 
+/******* Portfolio *********/
+    
     .portfolio .l-box {
+        height: 100%;
+    }
+
+    .expanded .l-box-1 {
         height: 100%;
     }
 
@@ -478,15 +726,48 @@ a.sub-header {
     .item:hover .tab {
         height: 20%;
     }
+
+/******* Portfolio Expanded *********/
+
+    .expanded p {
+        padding-right: 25%;
+    }
 }
 
-
-/******* Desktops + *******/
+/*****************************************
+/////////////// Desktops + ///////////////
+*****************************************/
 
 @media screen and (min-width: 78em) {
+
+/******* Splash *********/
 
     .pure-g.splash {
         width: 30%;
     }
 
+    .home {
+        display: none;
+        visibility: visible;
+    }
+
+/******* Portfolio *********/
+
+    .pure-g.portfolio {
+        width: 85%;
+    }
+
+    .fp-controlArrow.fp-prev {
+        visibility: visible;
+        left: 3%;
+        border-width: 35px 25px 35px 0; 
+    }
+    .fp-controlArrow.fp-next {
+        visibility: visible;
+        right: 3%;
+        border-width: 35px 0 35px 25px; 
+    }
+    .fp-slidesNav {
+        left: 65%;
+    }
 }

@@ -1,74 +1,87 @@
 var images = [
+    "include/img/work/avengers.png", 
     "include/img/work/intrepid.png", 
-    "include/img/work/mazda.png", 
     "include/img/work/nba.png", 
+    "include/img/work/we.jpg", 
     "include/img/work/sdp.png", 
-    "include/img/work/slider.jpg", 
+    "include/img/work/mazda.png", 
+    "include/img/work/mos.png",
     "include/img/work/github.png",
-    "include/img/work/intrepid.png",
-    "include/img/work/slider.jpg"
 ];
 var titles = [
+    "SUPER HEROES ASSEMBLE",
     "EXPLORE ENTERPRISE", 
-    "VIRTUAL MAZDA3", 
     "NBA: GET IN THE GAME", 
-    "SNAPDRAGON DIGITAL PEN", 
     "WHITE ELEPHANT", 
+    "SNAPDRAGON DIGITAL PEN", 
+    "VIRTUAL MAZDA3", 
+    "MAN OF STEEL",
     "SOCIAL CODING",
-    "EXPLORE ENTERPRISE",
-    "WHITE ELEPHANT"
 ];
-var subTitles = [
+var clients = [
+    "Marvel/Walmart",
     "Intrepid Museum", 
-    "Mazda", 
     "Bloomingdale's NYC", 
-    "Qualcomm", 
     "Animat Habitat", 
-    "GitHub",
-    "Intrepid Museum",
-    "Animat Habitat"
+    "Qualcomm", 
+    "Mazda", 
+    "Warner Bros./Walmart",
+    "Independent",
 ];
-
-
-var mqDesktop = window.matchMedia( "(min-width: 78em)" );
-var mqTabletLandscape = window.matchMedia( "(min-width: 64em)" );
-var mqTabletPortrait = window.matchMedia( "(min-width: 48em)" );
+var developer = [
+    "Current Studios",
+    "Current Studios",
+    "Current Studios",
+    "Animat Habitat",
+    "Current Studios",
+    "Current Studios",
+    "Independent",
+    "Github",
+];
+var tags = [
+    ["unity", "vuforia", "ar"],
+    ["xcode", "unity", "vuforia", "ar"],
+    ["win8", "kinect", "unity"],
+    ["xcode", "unity", "vuforia", "ar"],
+    ["eclipse", "sdp", "unity"],
+    ["unity", "vuforia", "ar"],
+    ["unity", "vuforia", "ar"],
+    [],
+];
+var stores = [
+    ["apple", "android"],
+    ["apple",],
+    [],
+    ["apple-comingsoon"],
+    [],
+    ["apple", "android"],
+    ["apple", "android"],
+    []
+];
 
 
 $(document).ready(function() {
     BuildPortfolio();
-    // mqDesktop.addListener(function(changed) {
-    //     BuildPortfolio();
-    //     console.log('JS READY');
-    //     setTimeout(function(){
-    //         $('#fullpage').fullpage.reBuild(true);
-    //     }, 500); 
-    // });
-    // mqTabletLandscape.addListener(function(changed) {
-    //     BuildPortfolio();
-    //     console.log('JS READY');
-    //     setTimeout(function(){
-    //         $('#fullpage').fullpage.reBuild(true);
-    //     }, 500); 
-    // });
-    // mqTabletPortrait.addListener(function(changed) {
-    //     BuildPortfolio();
-    //     console.log('JS READY');
-    //     setTimeout(function(){
-    //         $('#fullpage').fullpage.reBuild(true);
-    //     }, 500);   
-    // });
+
+    /************** BUTTON METHODS ****************/
+
+    $('button.sub-header').click(function(event) {
+        event.stopPropagation();
+        var i = $('button.sub-header').index(this);
+        ExpandPortfolio(i);
+    });
+    $('.close-button').click(function(event) {
+        event.stopPropagation();
+        $('.expanded').toggle('clip');
+    });
 });
+
+
+/*************** GALLERY **************/
 
 function BuildPortfolio() {
     
-    //construct gallery item HTML
-
-    var $gallery = $('.gallery');
-    var $galleryTablet = $('.gallery-tablet');
-    var $galleryMobile = $('.gallery-mobile');
-
-
+    //HTML to create 1 item
     var openSection = "<div class='slide'>"
                         + "<div class='pure-g portfolio'>";
 
@@ -76,7 +89,7 @@ function BuildPortfolio() {
                                 + "<div class='face' style='background-color:black'>"
                                     + "<div class='curtain'>"
                                         + "<div class='content'>"
-                                            + "<a href='' class='sub-header'>View Details</a>"
+                                            + "<button class='sub-header'>View Details</button>"
                                         + "</div>"
                                     + "</div>"
                                 + "</div>"
@@ -96,26 +109,18 @@ function BuildPortfolio() {
                     + "</div>";
 
 
+    var $gallery = $('.gallery');
+    var sectionLength = 4; //how many items should be on a slide
 
-    var sectionLength = 4;
-    var sectionLengthTablet = 2;
-    var sectionLengthMobile = 1;
 
-    // if(mqDesktop.matches || mqTabletLandscape.matches) {
-    //     sectionLength = 4;
-    // }
-    // else if(mqTabletPortrait.matches) {
-    //     sectionLength = 2;       
-    // }
-
+    //create all the items in this loop
     for(var i=0; i<images.length; i++) {
+
         //start a new slide if needed
         if(i % sectionLength == 0) {
             if(i > 0){
-                console.log('CLOSE');
                 $(closeSection).appendTo($gallery);
             }
-            console.log('OPEN');    
             $(openSection).appendTo($gallery);
         }
 
@@ -128,158 +133,57 @@ function BuildPortfolio() {
 
         //set the item's content
         $('.face').last().css('backgroundImage', 'url('+images[i]+')');
-        $('.header').last().text(titles[i]);
-        $('.sub-header').last().text(subTitles[i]);
+        $('.portfolio .header').last().text(titles[i]);
+        $('.portfolio .sub-header').last().text(clients[i]);
 
         //if this is the last item, close the slide
         if(i == images.length -1){
-            console.log('CLOSE');
             $(closeSection).appendTo($gallery);
         }
     }
 
 }
 
-/************** SPLASH MENU ANIMATIONS ****************/
+/**************  EXPANDED VIEW ****************/
 
-function ShowSplash(index, length) { 
-    // $('.splash-container .overlay').animate({
-    //     backgroundColor: 'rgba(0,0,0,0.95)'
-    // }, 300);
-
+function ExpandPortfolio(index) {
+    //set titles and description
+    $('.expanded .title').text(titles[index]);
+    $('.expanded .sub-header').first().text(clients[index]);
+    $('.expanded .sub-header').last().text(developer[index]);
+    $('.l-box-1').css('backgroundImage', 'url('+images[index]+')');
     
+    //set tags 
+    var itemTags = tags[index];
+    $('.icon-container').empty();
 
-
-    $('.splash .splash-item').eq(index).animate({
-        top: '0',
-        opacity: '1',
-    },500);
-    setTimeout(function () {   
-        if (++index < length) ShowSplash(index, length);
-        else $('.footer').css('visibility', 'visible');
-    }, 80);
-}
-
-function HideSplash() {  
-    // $('.splash-container .overlay').animate({
-    //     backgroundColor: 'rgba(0,0,0,0.95)'
-    // }, 300);
-    $('.menu').animate({
-        top: '-200px'
-    },300);
-    setTimeout(function(){
-        $('.menu').css('left', '50px');
-        $('.menu').animate({
-            top: '15px'
-        },200)}, 1000);
-    $('.menu').addClass('side-menu');   
-    $('.footer').css('visibility', 'hidden');     
-    // $('.splash-container').animate({
-    //     width: '150px'
-    // }, 200);
-    // $('.splash-logo').animate({
-    //     top: '10px',
-    //     width: '80px',
-    //     height: '80px'
-    // }, 400);
-    $('.splash .splash-item').animate({
-        opacity: 0,
-    }, 100);
-}
-
-/************* Menu Animations *********************/
-
-function ToggleMenuTab() { 
-   $('.menu-item').fadeToggle('slow');
-}
-
-function ToggleMenu() {
-    if($('.menu').hasClass('open')) {
-        $('.menu').removeClass('open');
-        HideMenu($('.menu .splash-item').length);
+    //tags
+    for(var i=0; i<itemTags.length; i++) {
+        var $newTag = $('<div/>', {
+            'class':'tag',
+            'id': itemTags[i],
+            'html': '<span>'+itemTags[i]+'</span>'
+        });
+        $newTag.appendTo($('.icon-container').first());
     }
-    else{
-        $('.menu').addClass('open');
-        ShowMenu(0, $('.menu .splash-item').length);
+    //store links
+    var itemStores = stores[index];
+    for(var i=0; i<itemStores.length; i++) {
+        var $newTag = $('<a/>', {
+            'class':'store-link',
+            'id': itemStores[i]
+        });
+        $newTag.appendTo($('.icon-container').last());
     }
-}
 
-function ShowMenu(index, length) { 
-    if(index == 0) {
-        $('.splash-logo').animate({
-            width: '80px',
-            height: '80px'
-        },100);
-    }
-    $('.menu .splash-item').eq(index).addClass('slideout');
-    setTimeout(function () {   
-        if (++index < length) ShowMenu(index, length);
-    }, 40);
-}
+    //expand view
+    $('.expanded').toggle('clip');
 
-function HideMenu(index) {
-    if(index == $('.menu .splash-item').length){
-        $('.splash-logo').animate({
-            width: '70px',
-            height: '70px'
-        },100);
-    }
-    $('.menu .splash-item').eq(index).removeClass('slideout');
-    setTimeout(function () {   
-        if (--index >= 0) HideMenu(index);
-    }, 40);
-}
-
-function HideMenuInstant() {
-    $('.splash-logo').css('width', '70px');
-    $('.splash-logo').css('height', '70px');
-    $('.menu .splash-item').removeClass('slideout');
-    $('.menu').removeClass('open');
-}
-
-/************** PORTFOLIO ANIMATIONS ****************/
-
-function ShowPortfolioFromTop(index, length) {    
-    $('.pure-g#work-portfolio .l-box').eq(index).animate({
-        top: 0,
-        opacity: 1
-    },500);
-    setTimeout(function () {   
-        if (++index < length) ShowPortfolioFromTop(index, length);
-    }, 40);
-}
-function ShowPortfolioFromBottom(index) {    
-    $('.pure-g#work-portfolio .l-box').eq(index).animate({
-        top: 0,
-        opacity: 1
-    },500);
-    setTimeout(function () {   
-        if (--index >= 0) ShowPortfolioFromBottom(index);
-    }, 40);
-}
-
-function HidePortfolio() {    
-    $( ".pure-g#work-portfolio .l-box" ).each(function( index ) {
-        $(this).animate({
-            opacity: 0
-        },500);
-    });
 }
 
 
-//bind buttons
 
-$('.splash-item#about').click(function(event) {
-    event.stopPropagation();
-    $('#fullpage').fullpage.moveTo(2);
-});
-$('.splash-item#portfolio').click(function(event) {
-    event.stopPropagation();
-    $('#fullpage').fullpage.moveTo(3);
-});
-$('.splash-item#contact').click(function(event) {
-    event.stopPropagation();
-    $('#fullpage').fullpage.moveTo(4);
-});
+
+
 
 
