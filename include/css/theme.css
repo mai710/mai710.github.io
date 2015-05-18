@@ -9,8 +9,24 @@
     src: url(fonts/FiraSans/FiraSans-Thin.otf); 
 }
 @font-face {
+<<<<<<< HEAD
     font-family: 'FiraSansRegular'; 
     src: url(fonts/FiraSans/FiraSans-Regular.otf); 
+=======
+    font-family: 'Sansation';
+    src: url(fonts/sansation/Sansation-Regular.ttf);
+}
+@font-face {
+    font-family: 'WCManoNegra';
+    src: url('WCManoNegraBta-webfont.eot');
+    src: url('WCManoNegraBta-webfont.eot?#iefix') format('embedded-opentype'),
+         url('WCManoNegraBta-webfont.woff') format('woff'),
+         url('WCManoNegraBta-webfont.ttf') format('truetype'),
+         url('WCManoNegraBta-webfont.svg#WCManoNegra') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+>>>>>>> b7effae8364e7f0fe09ccb351940f2263cc28798
 }
 
 * {
@@ -123,11 +139,18 @@ button {
     position: relative;
     display: flex;
     display: -webkit-flex;
+<<<<<<< HEAD
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
     z-index: 3;
     top: 0%;
     right: 8%;
+=======
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    bottom: 0;
+    z-index: 4;
+>>>>>>> b7effae8364e7f0fe09ccb351940f2263cc28798
     width: 100%;
     height: 100%;
     font-family: 'FiraSansRegular', sans-serif;
@@ -214,6 +237,7 @@ button {
 .splash .l-box:nth-child(1) {
     height: 70%;
 }
+<<<<<<< HEAD
 .splash .l-box:nth-child(2) {
     height: 30%;
 }
@@ -225,6 +249,44 @@ button {
     line-height: 1.2;
     padding-bottom: 10px;
     padding-right: 0px;
+=======
+
+.title {
+    font-family: 'WCManoNegra', sans-serif;
+    font-size: 25px;
+}
+
+/*Logo*/
+#logo .content {  
+                 background-image: url('../img/splash-logo.png');
+                 background-size: contain;
+                 background-repeat: no-repeat;
+                 background-position: center;
+                }
+
+/*About*/
+#about .content { border: #262626 solid 3px; padding-bottom: 10px;}
+#about .title { padding-top: 13px; margin: 0; }
+
+/*Portfolio*/
+.splash-item#portfolio { padding-bottom: 10px; }
+#portfolio .content { flex-direction: column; -webkit-flex-direction: column;}
+#portfolio .content i {font-size: 65px; }
+
+/*Contact*/
+.splash-item#contact { width: 150%; }
+#contact .third { padding-bottom: calc(33% - 5px); }
+#contact .title { padding-left: 30px; }
+#contact .content i {font-size: 28px; }
+
+/*Art*/
+.splash-item#art { width: 50%; left: 50%; }
+/*#art .content { border-bottom-right-radius: 50%; }*/
+#art .content i {font-size: 24px; }
+
+.splash .l-box {
+	overflow: visible;
+>>>>>>> b7effae8364e7f0fe09ccb351940f2263cc28798
 }
 
 .banner#footer {
@@ -547,6 +609,10 @@ button.sub-header {
     background-position: center;
     background-repeat: no-repeat;
     margin: 5px; 
+<<<<<<< HEAD
+=======
+    border: white solid 1px;
+>>>>>>> b7effae8364e7f0fe09ccb351940f2263cc28798
 
     -ms-transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
@@ -556,6 +622,17 @@ button.sub-header {
 .store-link#apple-comingsoon { background-image: url('../img/tags/apple-comingsoon.png'); }
 .store-link#android { background-image: url('../img/tags/android-store.png'); }
 
+<<<<<<< HEAD
+=======
+.store-link:hover {
+    background-color: rgba(255,255,255,0.1);
+
+    -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+>>>>>>> b7effae8364e7f0fe09ccb351940f2263cc28798
 .line {
     width: 100%;
     height: 0;
