@@ -58,7 +58,16 @@ var stores = [
     ["apple", "android"],
     []
 ];
-
+var storeLinks = [
+    ["", ""],
+    ["",],
+    [],
+    [],
+    [],
+    ["", ""],
+    ["", ""],
+    []
+];
 
 $(document).ready(function() {
     BuildPortfolio();
@@ -168,10 +177,13 @@ function ExpandPortfolio(index) {
     }
     //store links
     var itemStores = stores[index];
+    var itemLinks = storeLinks[index];
     for(var i=0; i<itemStores.length; i++) {
         var $newTag = $('<a/>', {
             'class':'store-link',
-            'id': itemStores[i]
+            'id': itemStores[i],
+            'href': itemLinks[i],
+            'target': 'blank'
         });
         $newTag.appendTo($('.icon-container').last());
     }
