@@ -65,11 +65,7 @@ var storeLinks = [
     [],
     [],
     ["", ""],
-<<<<<<< HEAD
     ["", ""], 
-=======
-    ["", ""],
->>>>>>> b7effae8364e7f0fe09ccb351940f2263cc28798
     []
 ];
 
@@ -196,11 +192,7 @@ function ExpandPortfolio(index) {
     var itemLinks = storeLinks[index];
     for(var i=0; i<itemStores.length; i++) {
         var $newTag = $('<a/>', {
-<<<<<<< HEAD
             'class':'store-link theme-button',
-=======
-            'class':'store-link',
->>>>>>> b7effae8364e7f0fe09ccb351940f2263cc28798
             'id': itemStores[i],
             'href': itemLinks[i],
             'target': 'blank'
