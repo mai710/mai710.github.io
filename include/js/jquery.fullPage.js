@@ -104,7 +104,7 @@
             continuousVertical: false,
             normalScrollElements: null,
             scrollOverflow: false,
-            touchSensitivity: 5,
+            touchSensitivity: 15,
             normalScrollElementTouchThreshold: 5,
 
             //Accessibility

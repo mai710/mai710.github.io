@@ -5,22 +5,18 @@
     src: url(fonts/FiraSans/FiraSans-Eight.otf); 
 }
 @font-face {
-    font-family: 'FiraSans-UltraLightItalic'; 
-    src: url(fonts/FiraSans/FiraSans-UltraLightItalic.otf); 
+    font-family: 'FiraSansThin'; 
+    src: url(fonts/FiraSans/FiraSans-Thin.otf); 
 }
 @font-face {
-    font-family: 'Sansation';
-    src: url(fonts/sansation/Sansation-Regular.ttf);
-}
-
-@font-face {
-    font-family: 'WCManoNegra';
-    src: url(fonts/WC-Mano-Negra-Bta/WCManoNegraBta.otf);
+    font-family: 'FiraSansRegular'; 
+    src: url(fonts/FiraSans/FiraSans-Regular.otf); 
 }
 
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -31,7 +27,7 @@ body {
     line-height: 1.7em;
     background-color: #262626;
     font-size: 13px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 h1,
@@ -68,8 +64,11 @@ button {
     top: 0;  bottom: 0;  left: 0;  right: 0;
     height: 100%;
     display: flex;
+    display: -webkit-flex;
     justify-content: center;
+    -webkit-justify-content: center;
     align-items: center;
+    -webkit-align-items: center;
 }
 
 .black {
@@ -94,51 +93,81 @@ button {
 
 .banner {
     position: absolute;
-    bottom: 0;
+    top: 0;
     width: 100%;
-    height: 10%;
-    /*z-index: 4;*/
-    border-top: #F2C784 solid 3px;
-    box-shadow: 0px -1px 10px -2px black; 
+    height: 90px;
+    z-index: 4;
 }
 
 .home {
     position: absolute;
-    visibility: hidden;
     cursor: pointer;
-    bottom: 5%;
-    transform: translateY(55%);
-    right: 12px;
+    top: 100%;
+    left: calc(7.5% + 5px);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     background-image: url('../img/logo-gold-small.png');
     background-position: center;
     background-size: cover;
-    width: 60px;
-    height: 60px;
-    border: #D3B380 solid 2px;
-    /*border-radius: 50%;*/
+    width: 50px;
+    height: 50px;
+    z-index: 4;
+    border: #D3B380 solid 1px;
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
 }
 
 .section-header {
     position: relative;
     display: flex;
-    justify-content: flex-start;
-    bottom: 0;
-    z-index: 4;
+    display: -webkit-flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    z-index: 3;
+    top: 0%;
+    right: 8%;
     width: 100%;
-    height: 10%;
-    padding-top: 12px;
-    padding-left: 12px;
-    font-family: 'WCManoNegra', sans-serif;
+    height: 100%;
+    font-family: 'FiraSansRegular', sans-serif;
     font-size: 13px;
 }
 .section-header h1{
+    display: inline-block;
     height: 100%;
-    margin: 0;
+    margin-top: 35px;
+}
+
+.theme-button {
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border: #D3B380 solid 1px;
+    font-family: 'FiraSansRegular', sans-serif;
+    font-size: 17px;
+    color: #D3B380;
+
+    -ms-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+.theme-button:hover {
+    color: #262626;
+    border: rgb(158, 133, 92) solid 1px;
+}
+.theme-button .ease {
+    height: 100%;
+}
+.theme-button:hover .ease{
+  width: 100%;
+  background-color: rgb(158, 133, 92);
 }
 
 .pure-g {
     position: relative;
-    width: 100%;
+    width: 85%;
     height: 90%;
     letter-spacing: normal;
     margin: auto;
@@ -153,9 +182,6 @@ button {
     height: 100%;
 }
 
-.fp-tableCell {
-    vertical-align: top;
-}
 .fp-controlArrow.fp-prev {
     visibility: hidden;
     border-width: 20px 15px 20px 0; 
@@ -180,72 +206,47 @@ button {
 /******** Splash *********/
 
 .pure-g.splash {
-    position: absolute;
-    width: 80%;
+    position: fixed;
+    width: 85%;
+    height: 70%;
 }
 
-.splash-item {
-	position: relative;
-    cursor: pointer;
-	width: 100%;
-    height: auto;
-    border: white solid 5px;
-    font-size: 40px;
+.splash .l-box:nth-child(1) {
+    height: 70%;
+}
+.splash .l-box:nth-child(2) {
+    height: 30%;
 }
 
-.title {
-    font-family: 'WCManoNegra';
-    font-size: 25px;
+.caption {
+    position: relative;
+    width: 100%;
+    font-family: 'FiraSansRegular', sans-serif;
+    line-height: 1.2;
+    padding-bottom: 10px;
+    padding-right: 0px;
 }
 
-/*Logo*/
-#logo .content {  
-                 background-image: url('../img/splash-logo.png');
-                 background-size: contain;
-                 background-repeat: no-repeat;
-                 background-position: center;
-                }
-
-/*About*/
-#about .content { border: #262626 solid 3px; padding-bottom: 10px;}
-#about .title { padding-top: 13px; margin: 0; }
-
-/*Portfolio*/
-.splash-item#portfolio { padding-bottom: 10px; }
-#portfolio .content { flex-direction: column; }
-#portfolio .content i {font-size: 65px; }
-
-/*Contact*/
-.splash-item#contact { width: 150%; }
-#contact .third { padding-bottom: calc(33% - 5px); }
-#contact .title { padding-left: 30px; }
-#contact .content i {font-size: 28px; }
-
-/*Art*/
-.splash-item#art { width: 50%; left: 50%; }
-/*#art .content { border-bottom-right-radius: 50%; }*/
-#art .content i {font-size: 24px; }
-
-.splash .l-box {
-	overflow: visible;
+.banner#footer {
+    top: auto;
+    bottom: 0;
+    height: 10%;
 }
-
-/*.splash-item:hover {
-    opacity: 1;
-    left: 90px;
-}*/
-
-.splash-item i{
-	font-size: 22px;
-}
-
 .footer {
+    display: inline;
     vertical-align: bottom;
+}
+
+a.social {
+    text-decoration: none;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .footer i {
     font-size: 20px;
     transform: translateY(15%);
+    -webkit-transform: translateY(15%);
 }
 
 .footer i:hover {
@@ -275,26 +276,26 @@ button {
 .about .content {
     width: 40%;
 }
+
 /******* Portfolio *********/
 
 
 .pure-g.portfolio {
-    /*width: calc(80% + 20px);*/
-    /*width: 100%;*/
-    /*margin-top: -5%;*/
+    width: 85%;
+    margin-top: 90px;
 }
 
 .portfolio .l-box {
-    height: 25%;
+    height: 50%;
     border: #262626 solid 1px;
-    /*padding: 10px;*/
+    padding-bottom: 10px;
 }
 
 .header {
     font-family: 'Lato', sans-serif;
     font-size: 13px;
     line-height: 1.5;
-    color: #262626;
+    color: #D3B380;
     margin: 10px;
 }
 
@@ -303,7 +304,7 @@ button {
     font-style: italic;
     font-size: 13px;
     color: #6E6E6E;
-    margin: 10px;
+    margin: 15px;
 }
 
 button.sub-header {
@@ -312,7 +313,7 @@ button.sub-header {
 }
 
 .dash {
-    color: #F2C784;
+    color: #D3B380;
     margin-top: -20px;
     margin-bottom: -10px;
     font-family: sans-serif;
@@ -327,13 +328,14 @@ button.sub-header {
     top: 50%;
     left: 50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     border-style: solid;
     border-width: 20px 0px 20px 20px;
     border-color: transparent;
     border-left-color: white;
 }
 .pointer#black{
-    border-left-color: #262626;
+    border-left-color: #D3B380;
 }
 
 .item {
@@ -341,16 +343,10 @@ button.sub-header {
     width: 100%;
     height: 100%;
 }
-/*.item:hover .content {
-    opacity: 1;
-    
-    -ms-transition: all 0.2s linear 0.15s;
-    -webkit-transition: all 0.2s linear 0.15s;
-    transition: all 0.2s linear 0.15s;
-}*/
 
 .face {
     position: absolute;
+    cursor: pointer;
     width: 100%;
     height: 100%;
     right: 0;
@@ -363,56 +359,38 @@ button.sub-header {
     transition: all 0.15s linear;
 }
 .item:hover .face {
-    width: 50%;
-
-    -ms-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
+    height: 60%;
 }
 
 .curtain {
     position: relative;
-    background-color: rgba(0,0,0, 0.75);
+    display: none;
     width: 100%;
     height: 100%;
-    opacity: 0;
-
-    -ms-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
 }
-.item:hover .curtain {
-    opacity: 1;
-    
 
-    -ms-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
 
 .tab {
     position: absolute;
+    cursor: pointer;
     display: block;
-    width: 0%;
-    height: 100%;
-    left: 0;
     opacity: 0;
-    /*border-left: #262626 solid 4px;*/
-
-    /*padding-left: 10px;*/
-    /*padding-right: 10px;*/
+    overflow: hidden;
+    width: 100%;
+    height: 0%;
+    bottom: 0;
+    border-bottom: #262626 solid 4px;
+    border-left: none;
     
     -ms-transition: all 0.15s linear;
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
 }
 .item:hover .tab {
-    width: 50%;
+    height: 40%;
     opacity: 1;
-
-    -ms-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
+    border-top: #D3B380 solid 3px;
+    border-bottom: #D3B380 solid 3px;
 }
 
 .content-subhead-wrapper {
@@ -420,11 +398,6 @@ button.sub-header {
     width: 100%;
     height: 100%;
     top: 0;
-    /*background-color: rgba(0, 0, 0, 0.85);*/
-
-    /*-ms-transition: opacity 0.15s linear;*/
-    /*-webkit-transition: opacity 0.15s linear;*/
-    /*transition: opacity 0.15s linear;    */
 }
 
 .content-subhead {
@@ -434,6 +407,7 @@ button.sub-header {
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 }
 
 /******* Portfolio Expanded ********/
@@ -451,7 +425,6 @@ button.sub-header {
 }
 
 .l-box-2 {
-    /*width: auto;*/
     padding: 5%;
 }
 
@@ -461,6 +434,7 @@ button.sub-header {
     width: 100%;
     height: 100%;
     top: 0;
+    z-index: 4;
 }
 
 .close-button {
@@ -470,7 +444,6 @@ button.sub-header {
     font-size: 30px;
     cursor: pointer;
     color: #D3B380;
-    /*background-color: rgba(0,0,0,0.5);*/
     border-radius: 50%; 
     z-index: 4;
 }
@@ -496,6 +469,7 @@ button.sub-header {
 
 .icon-container {
     display: flex;
+    display: -webkit-flex;
 }
 
 .tag {
@@ -543,10 +517,6 @@ button.sub-header {
     left: 50%;
     margin-left: -20px;
     z-index: 999;
-
-    -ms-transition: all 0.1s linear;
-    -webkit-transition: all 0.1s linear;
-    transition: all 0.1s linear;
 }
 .tag span:before {
     content: '';
@@ -576,19 +546,15 @@ button.sub-header {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 200px;
-    height: 65px;
     margin: 5px; 
-    border: white solid 1px;
+
+    -ms-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
-.store-link#apple { background-image: url('../img/tags/apple-store.png'); }
+.store-link#apple { background-image: url('../img/tagss/apple-store.png'); }
 .store-link#apple-comingsoon { background-image: url('../img/tags/apple-comingsoon.png'); }
 .store-link#android { background-image: url('../img/tags/android-store.png'); }
-
-.store-link:hover {
-    -webkit-filter: sepia(1);
-    filter: sepia(1);
-}
 
 .line {
     width: 100%;
@@ -598,7 +564,136 @@ button.sub-header {
 
 /******* Contact *********/
 
+.pure-g.contact {
+    margin-top: 90px;
+    padding: 5px;
+}
 
+.contact .l-box:nth-child(1) {
+    border-bottom: rgba(211, 179, 128, 0.15) solid 1px;
+}
+
+.contact .content {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+#form-main {
+    position: relative;
+    width: 100%;
+}
+
+#form-div {
+    position: relative;
+    width: 100%;
+}
+
+.feedback-input {
+    color:#262626;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: white;
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width:100%;
+    border: 3px solid rgba(0,0,0,0);
+}
+
+.feedback-input:focus {
+    background: white;
+    box-shadow: 0;
+    border: 3px solid #D3B380;
+    color: #D3B380;
+    outline: none;
+    padding: 13px 13px 13px 54px;
+}
+
+
+#name {
+    background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#email {
+    background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#comment {
+    background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+#button-blue {
+    font-family: 'FiraSansRegular', Arial, Helvetica, sans-serif;
+    float:left;
+    width: 100%;
+    border: #D3B380 solid 1px;
+    cursor: pointer;
+    background-color: #262626;
+    color: #D3B380;
+    font-size: 24px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    margin-top: -1px;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#button-blue:hover {
+    background-color: rgba(0,0,0,0);
+    color: #262626;
+    border: rgb(158, 133, 92) solid 1px;
+}
+    
+.submit:hover {
+    color: #D3B380;
+}
+    
+.ease {
+    width: 0px;
+    height: 77px;
+    background-color: #D3B380;
+
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    -ms-transition: .3s ease;
+    transition: .3s ease;
+}
+
+.submit:hover .ease {
+  width: 100%;
+  background-color: rgb(158, 133, 92);
+}
+
+@media only screen and (max-width: 580px) {
+    /*#form-div {*/
+        /*left: 3%;*/
+        /*margin-right: 3%;*/
+        /*margin-left: 0;*/
+        /*padding-left: 3%;*/
+        /*padding-right: 3%;*/
+    /*}*/
+}
 
 
 
@@ -611,8 +706,19 @@ button.sub-header {
 /******* General *********/
 
     .section-header {
+        font-family: 'FiraSansThin', sans-serif;
         font-size: 25px;
-        padding-top: 26px;
+    }
+
+    .home {
+        width: 60px;
+        height: 60px;
+    }
+
+    .theme-button {
+        width: 200px;
+        height: 65px;
+        font-size: 23px;
     }
 
     .fp-slidesNav.bottom {
@@ -621,8 +727,8 @@ button.sub-header {
 
 /******* Splash *********/
 
-    .pure-g.splash {
-        width: 50%;
+    .caption {
+        font-family: 'FiraSansThin', sans-serif;
     }
 
 /******* Portfolio *********/
@@ -632,9 +738,8 @@ button.sub-header {
     }
 
     .portfolio .l-box {
-        height: 50%;
-        padding: 10px;
-        border: none;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     .expanded .l-box-1 {
@@ -645,15 +750,6 @@ button.sub-header {
     #contact .content i {font-size: 40px; }
     #art .content i {font-size: 40px; }
 
-    /*.fp-controlArrow.fp-prev {
-        display: block;
-        border-width: 38.5px 34px 38.5px 0; 
-    }
-    .fp-controlArrow.fp-next {
-        display: block;
-        border-width: 38.5px 0 38.5px 34px; 
-    }*/
-
     .header {
         font-size: 20px;
     }
@@ -663,7 +759,7 @@ button.sub-header {
     }
 
     .pointer {
-        top: -8px;
+        top: -10px;
         left: 0; right: 0;
         border-width: 0px 20px 20px 20px;
         border-color: transparent;
@@ -671,26 +767,14 @@ button.sub-header {
     }
     .pointer#black {
         border-color: transparent;
-        border-bottom-color: #262626;
-    }
-
-    .tab {
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 0%;
-        bottom: 0;
-        border-bottom: #262626 solid 4px;
-        border-left: none;
+        border-bottom-color: #D3B380;
     }
 
     .item:hover .face {
-        width: 100%;
         height: 70%;
     }
 
     .item:hover .tab {
-        width: 100%;
         height: 30%;
     }
 
@@ -703,34 +787,62 @@ button.sub-header {
 
 }
 
+/******* Contact *********/
+
+    .contact .footer i {
+        font-size: 25px;
+    }
+
 /*****************************************
 /////////// Tablets (Landscape) + ////////
 *****************************************/
 
 @media screen and (min-width: 64em) {
 
+/******* Splash *********/
+
+    .splash .l-box:nth-child(1) {
+        height: 100%;
+    }
+    .splash .l-box:nth-child(2) {
+        height: 100%;
+    }
+
+    .caption {
+        padding-bottom: 20px;
+        padding-right: 50px;
+        border-right: rgba(211, 179, 128, 0.15) solid 1px;
+    }
+
+    .form-main {
+        padding-left: 50px
+    }
+
 /******* Portfolio *********/
     
     .portfolio .l-box {
-        height: 100%;
+        width: 50%;
     }
 
     .expanded .l-box-1 {
         height: 100%;
     }
 
-    .item:hover .face {
-        height: 80%;
-    }
-
-    .item:hover .tab {
-        height: 20%;
-    }
-
 /******* Portfolio Expanded *********/
 
     .expanded p {
         padding-right: 25%;
+    }
+
+
+/******* Contact *********/
+    
+    .contact .l-box:nth-child(1) {
+        border-bottom: none;
+    }
+
+    #form-main {
+        padding-left: 50px;
     }
 }
 
@@ -740,21 +852,26 @@ button.sub-header {
 
 @media screen and (min-width: 78em) {
 
-/******* Splash *********/
+/******* General *********/
 
-    .pure-g.splash {
-        width: 30%;
+    .section-header {
+        font-family: 'FiraSansEight', sans-serif;
     }
 
-    .home {
-        display: none;
-        visibility: visible;
+/******* Splash *********/
+    
+    .caption {
+        font-family: 'FiraSansEight', sans-serif;
     }
 
 /******* Portfolio *********/
 
-    .pure-g.portfolio {
-        width: 85%;
+    .portfolio .l-box {
+        width: 25%;
+    }
+
+    .curtain {
+        display: block;
     }
 
     .fp-controlArrow.fp-prev {

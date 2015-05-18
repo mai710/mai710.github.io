@@ -58,16 +58,38 @@ var stores = [
     ["apple", "android"],
     []
 ];
-
+var storeLinks = [
+    ["", ""],
+    ["",],
+    [],
+    [],
+    [],
+    ["", ""],
+    ["", ""], 
+    []
+];
 
 $(document).ready(function() {
     BuildPortfolio();
 
     /************** BUTTON METHODS ****************/
 
-    $('button.sub-header').click(function(event) {
+    // $('.curtain').click(function(event) {
+    //     if($(this).css('opacity') == 1){
+    //         console.log('CURTAIN');
+    //         event.stopPropagation();
+    //     }
+    // });
+    $('.curtain').click(function(event) {
         event.stopPropagation();
-        var i = $('button.sub-header').index(this);
+        console.log('CLICK');
+        var i = $('.curtain').index(this);
+        ExpandPortfolio(i);
+    });
+    $('.tab').click(function(event) {
+        event.stopPropagation();
+        console.log('CLICK');
+        var i = $('.tab').index(this);
         ExpandPortfolio(i);
     });
     $('.close-button').click(function(event) {
@@ -82,19 +104,18 @@ $(document).ready(function() {
 function BuildPortfolio() {
     
     //HTML to create 1 item
-    var openSection = "<div class='slide'>"
-                        + "<div class='pure-g portfolio'>";
+    var openSection = "<div class='pure-g portfolio'>";
 
     var itemHtml =          "<div class='item'>"
-                                + "<div class='face' style='background-color:black'>"
+                                + "<div class='face'>"
                                     + "<div class='curtain'>"
                                         + "<div class='content'>"
-                                            + "<button class='sub-header'>View Details</button>"
+                                            // + "<button class='sub-header'>View Details</button>"
                                         + "</div>"
                                     + "</div>"
                                 + "</div>"
                                 + "<div class='tab'>"
-                                    +"<div class='pointer'></div>"
+                                    // +"<div class='pointer' id='black'></div>"
                                     + "<div class='content-subhead-wrapper'>"
                                         + "<div class='content-subhead'>"
                                             + "<h3 class='header'></h3>"
@@ -106,10 +127,10 @@ function BuildPortfolio() {
                             + "</div>";
 
     var closeSection =  "</div>"
-                    + "</div>";
+                    // + "</div>";
 
 
-    var $gallery = $('.gallery');
+    var $gallery = $('.section#section2');
     var sectionLength = 4; //how many items should be on a slide
 
 
@@ -117,7 +138,7 @@ function BuildPortfolio() {
     for(var i=0; i<images.length; i++) {
 
         //start a new slide if needed
-        if(i % sectionLength == 0) {
+        if(i == 0) {
             if(i > 0){
                 $(closeSection).appendTo($gallery);
             }
@@ -133,7 +154,7 @@ function BuildPortfolio() {
 
         //set the item's content
         $('.face').last().css('backgroundImage', 'url('+images[i]+')');
-        $('.portfolio .header').last().text(titles[i]);
+        $('.portfolio .header').last().html(titles[i]+"&nbsp&nbsp<i class='fa fa-external-link gold'></i>");
         $('.portfolio .sub-header').last().text(clients[i]);
 
         //if this is the last item, close the slide
@@ -168,10 +189,13 @@ function ExpandPortfolio(index) {
     }
     //store links
     var itemStores = stores[index];
+    var itemLinks = storeLinks[index];
     for(var i=0; i<itemStores.length; i++) {
         var $newTag = $('<a/>', {
-            'class':'store-link',
-            'id': itemStores[i]
+            'class':'store-link theme-button',
+            'id': itemStores[i],
+            'href': itemLinks[i],
+            'target': 'blank'
         });
         $newTag.appendTo($('.icon-container').last());
     }

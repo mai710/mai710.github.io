@@ -6,9 +6,9 @@ $(document).ready(function() {
         event.stopPropagation();
         $('#fullpage').fullpage.moveTo(2);
     });
-    $('.splash-item#portfolio').click(function(event) {
+    $('.splash .theme-button').click(function(event) {
         event.stopPropagation();
-        $('#fullpage').fullpage.moveTo(3);
+        $('#fullpage').fullpage.moveTo(2);
     });
     $('.splash-item#contact').click(function(event) {
         event.stopPropagation();
