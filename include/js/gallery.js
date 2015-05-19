@@ -1,74 +1,3 @@
-var images = [
-    "include/img/work/avengers.png", 
-    "include/img/work/intrepid.png", 
-    "include/img/work/nba.png", 
-    "include/img/work/we.jpg", 
-    "include/img/work/sdp.png", 
-    "include/img/work/mazda.png", 
-    "include/img/work/mos.png",
-    "include/img/work/github.png",
-];
-var titles = [
-    "SUPER HEROES ASSEMBLE",
-    "EXPLORE ENTERPRISE", 
-    "NBA: GET IN THE GAME", 
-    "WHITE ELEPHANT", 
-    "SNAPDRAGON DIGITAL PEN", 
-    "VIRTUAL MAZDA3", 
-    "MAN OF STEEL",
-    "SOCIAL CODING",
-];
-var clients = [
-    "Marvel/Walmart",
-    "Intrepid Museum", 
-    "Bloomingdale's NYC", 
-    "Animat Habitat", 
-    "Qualcomm", 
-    "Mazda", 
-    "Warner Bros./Walmart",
-    "Independent",
-];
-var developer = [
-    "Current Studios",
-    "Current Studios",
-    "Current Studios",
-    "Animat Habitat",
-    "Current Studios",
-    "Current Studios",
-    "Independent",
-    "Github",
-];
-var tags = [
-    ["unity", "vuforia", "ar"],
-    ["xcode", "unity", "vuforia", "ar"],
-    ["win8", "kinect", "unity"],
-    ["xcode", "unity", "vuforia", "ar"],
-    ["eclipse", "sdp", "unity"],
-    ["unity", "vuforia", "ar"],
-    ["unity", "vuforia", "ar"],
-    [],
-];
-var stores = [
-    ["apple", "android"],
-    ["apple",],
-    [],
-    ["apple-comingsoon"],
-    [],
-    ["apple", "android"],
-    ["apple", "android"],
-    []
-];
-var storeLinks = [
-    ["", ""],
-    ["",],
-    [],
-    [],
-    [],
-    ["", ""],
-    ["", ""], 
-    []
-];
-
 $(document).ready(function() {
     BuildPortfolio();
 
@@ -171,7 +100,7 @@ function ExpandPortfolio(index) {
     //set titles and description
     $('.expanded .title').text(titles[index]);
     $('.expanded .sub-header').first().text(clients[index]);
-    $('.expanded .sub-header').last().text(developer[index]);
+    $('.expanded .sub-header').last().text(developers[index]);
     $('.l-box-1').css('backgroundImage', 'url('+images[index]+')');
     
     //set tags 
@@ -190,14 +119,20 @@ function ExpandPortfolio(index) {
     //store links
     var itemStores = stores[index];
     var itemLinks = storeLinks[index];
+
     for(var i=0; i<itemStores.length; i++) {
-        var $newTag = $('<a/>', {
-            'class':'store-link theme-button',
+        
+        var $button = $("<div class='theme-button'></div>");
+        var $newLink = $('<a/>', {
+            'class':'content store-link',
             'id': itemStores[i],
             'href': itemLinks[i],
-            'target': 'blank'
+            'target': 'blank',
         });
-        $newTag.appendTo($('.icon-container').last());
+        $newLink.appendTo($button);
+        var $ease = $("<div class='ease'></div>")
+        $ease.appendTo($button);
+        $button.appendTo($('.icon-container').last());
     }
 
     //expand view
@@ -206,7 +141,81 @@ function ExpandPortfolio(index) {
 }
 
 
+/*********************************************************/
+/**************** PROJECT PAGE CONTENT *******************/
+/*********************************************************/
 
+
+var images = [
+    "include/img/work/avengers.png", 
+    "include/img/work/intrepid.png", 
+    "include/img/work/nba.png", 
+    "include/img/work/we.jpg", 
+    "include/img/work/sdp.png", 
+    "include/img/work/mazda.png", 
+    "include/img/work/mos.png",
+    "include/img/work/github.png",
+];
+var titles = [
+    "SUPER HEROES ASSEMBLE",
+    "EXPLORE ENTERPRISE", 
+    "NBA: GET IN THE GAME", 
+    "WHITE ELEPHANT", 
+    "SNAPDRAGON DIGITAL PEN", 
+    "VIRTUAL MAZDA3", 
+    "MAN OF STEEL",
+    "SOCIAL CODING",
+];
+var clients = [
+    "Marvel/Walmart",
+    "Intrepid Museum", 
+    "Bloomingdale's NYC", 
+    "Animat Habitat", 
+    "Qualcomm", 
+    "Mazda", 
+    "Warner Bros./Walmart",
+    "Independent",
+];
+var developers = [
+    "Current Studios",
+    "Current Studios",
+    "Current Studios",
+    "Animat Habitat",
+    "Current Studios",
+    "Current Studios",
+    "Independent",
+    "Github",
+];
+var tags = [
+    ["unity", "vuforia", "ar"],
+    ["xcode", "unity", "vuforia", "ar"],
+    ["win8", "kinect", "unity"],
+    ["xcode", "unity", "vuforia", "ar"],
+    ["eclipse", "sdp", "unity"],
+    ["unity", "vuforia", "ar"],
+    ["unity", "vuforia", "ar"],
+    [],
+];
+var stores = [
+    ["apple", "android"],
+    ["apple",],
+    [],
+    ["apple-comingsoon"],
+    [],
+    ["apple", "android"],
+    ["apple", "android"],
+    []
+];
+var storeLinks = [
+    ["https://itunes.apple.com/ca/app/super-heroes-assemble-canada/id979047191?mt=8", ""],
+    ["https://itunes.apple.com/us/app/mission-intrepid-explore-enterprise/id891318456?ls=1&mt=8"],
+    [],
+    [],
+    [],
+    ["https://itunes.apple.com/ca/app/virtual-mazda3/id695879761?mt=8", "https://play.google.com/store/apps/details?id=com.addispatch.Mazda3En&hl=en"],
+    ["https://itunes.apple.com/ca/app/man-steel-experience-canada/id646491828?mt=8", ""], 
+    []
+];
 
 
 

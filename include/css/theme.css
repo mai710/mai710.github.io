@@ -9,8 +9,8 @@
     src: url(fonts/FiraSans/FiraSans-Thin.otf); 
 }
 @font-face {
-    font-family: 'FiraSansRegular'; 
-    src: url(fonts/FiraSans/FiraSans-Regular.otf); 
+    font-family: 'FiraSansExtraLight'; 
+    src: url(fonts/FiraSans/FiraSans-ExtraLight.otf); 
 }
 
 * {
@@ -130,7 +130,7 @@ button {
     right: 8%;
     width: 100%;
     height: 100%;
-    font-family: 'FiraSansRegular', sans-serif;
+    font-family: 'FiraSansExtraLight', sans-serif;
     font-size: 13px;
 }
 .section-header h1{
@@ -144,8 +144,9 @@ button {
     cursor: pointer;
     width: 150px;
     height: 50px;
+    margin: 5px; 
     border: #D3B380 solid 1px;
-    font-family: 'FiraSansRegular', sans-serif;
+    font-family: 'FiraSansExtraLight', sans-serif;
     font-size: 17px;
     color: #D3B380;
 
@@ -221,10 +222,10 @@ button {
 .caption {
     position: relative;
     width: 100%;
-    font-family: 'FiraSansRegular', sans-serif;
-    line-height: 1.2;
+    font-family: 'FiraSansExtraLight', sans-serif;
     padding-bottom: 10px;
     padding-right: 0px;
+    line-height: 1.7;
 }
 
 .banner#footer {
@@ -543,10 +544,12 @@ button.sub-header {
 
 
 .store-link {
+    display: block;
+    width: 100%;
+    height: 100%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 5px; 
 
     -ms-transition: all 0.1s linear;
     -webkit-transition: all 0.1s linear;
@@ -570,6 +573,7 @@ button.sub-header {
 }
 
 .contact .l-box:nth-child(1) {
+    height: 60%;
     border-bottom: rgba(211, 179, 128, 0.15) solid 1px;
 }
 
@@ -641,7 +645,7 @@ textarea {
 }
 
 #button-blue {
-    font-family: 'FiraSansRegular', Arial, Helvetica, sans-serif;
+    font-family: 'FiraSansExtraLight', Arial, Helvetica, sans-serif;
     float:left;
     width: 100%;
     border: #D3B380 solid 1px;
@@ -685,16 +689,6 @@ textarea {
   background-color: rgb(158, 133, 92);
 }
 
-@media only screen and (max-width: 580px) {
-    /*#form-div {*/
-        /*left: 3%;*/
-        /*margin-right: 3%;*/
-        /*margin-left: 0;*/
-        /*padding-left: 3%;*/
-        /*padding-right: 3%;*/
-    /*}*/
-}
-
 
 
 /*****************************************
@@ -706,7 +700,7 @@ textarea {
 /******* General *********/
 
     .section-header {
-        font-family: 'FiraSansThin', sans-serif;
+        /*font-family: 'FiraSansThin', sans-serif;*/
         font-size: 25px;
     }
 
@@ -728,12 +722,14 @@ textarea {
 /******* Splash *********/
 
     .caption {
-        font-family: 'FiraSansThin', sans-serif;
+        /*font-family: 'FiraSansThin', sans-serif;*/
+        line-height: 1.7;
     }
 
 /******* Portfolio *********/
 
     .title {
+        font-family: 'Lato', sans-serif;
         font-size: 50px;
     }
 
@@ -785,13 +781,20 @@ textarea {
         line-height: 1.4;
     }
 
-}
-
 /******* Contact *********/
+    
+    .contact .l-box:nth-child(1) {
+        height: 80%;
+    }
+    .contact .l-box:nth-child(2) {
+        height: 60%;
+    }
 
     .contact .footer i {
         font-size: 25px;
     }
+
+}
 
 /*****************************************
 /////////// Tablets (Landscape) + ////////
@@ -838,7 +841,11 @@ textarea {
 /******* Contact *********/
     
     .contact .l-box:nth-child(1) {
+        height: 100%;
         border-bottom: none;
+    }
+    .contact .l-box:nth-child(2) {
+        height: 100%;
     }
 
     #form-main {
@@ -862,6 +869,7 @@ textarea {
     
     .caption {
         font-family: 'FiraSansEight', sans-serif;
+        line-height: 1.2;
     }
 
 /******* Portfolio *********/
