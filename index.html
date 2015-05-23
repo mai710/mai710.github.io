@@ -108,33 +108,21 @@
                 <div class="l-box pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-2">
                         
                     <div class="content">
-                        <div class="caption gold">
+                        <div class="caption gold" id="header-caption">
                             WANT TO COLLABORATE ON A PROJECT?
                         </div>        
                         <div class="caption white" id="sub-caption">
-                            If you have a creative idea, I'd love to help! I lean towards art and UI design, and enjoy projects that combine these passions with innovative tech. My expertise lie in the mobile platform, and I'm now expanding into web dev & design.
+                            If you have a creative idea, I'd love to help! I have a lot of experience in building mobile apps with rich 2D and 3D content. Bringing beautiful designs and animations to life is what I enjoy most. I'm also currently enjoying front-end web dev and would love to put my new skills to work! 
                         </div> 
-                        <div class="caption gold">
-                            OR JUST SAY HI!
+                        <div class="caption gold" id="header-caption">
+                            INTERESTED IN AUGMENTED REALITY?
                         </div> 
                         <div class="caption white" id="sub-caption">
-                            Connect with me on social networks.
+                            AR has grown in the past few years both as a technology and in popularity. Advertisers are adding AR elements to their campaigns to set their brands above the competition. It's being used as an educational tool and as a utility to make daily tasks easier and more fun.
+                            <br/>Not sure how you'd use AR? Let's brainstorm some ideas together! 
                             <p/>
                             <!-- <div class="content"> -->
-                                <div class=" footer gold">
-                                    <a class="social gold" href="https://www.linkedin.com/in/melawini" target="blank">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>   
-                                    <a class="social gold" href="http://github.com/mai710" target="blank">
-                                        <i class="fa fa-github-alt"></i>
-                                    </a>
-                                    <a class="social gold" href="https://twitter.com/maicodes" target="blank">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                    <a class="social gold" href="http://mai710.tumblr.com" target="blank">
-                                        <i class="fa fa-tumblr"></i>
-                                    </a>    
-                                </div>
+                                
                             <!-- </div> -->
                         </div> 
                     </div>
@@ -143,7 +131,10 @@
 
                 <div class="l-box pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-2"> 
 
-                    <div class="content">    
+                    <div class="content">  
+                        <div class="caption gold" id="header-caption">
+                            SEND ME A MESSAGE.
+                        </div>
                         <div id="form-main">
                             <div id="form-div">
                                 <form class="form" id="form1">
@@ -160,7 +151,6 @@
                                     <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
                                   </p>
                                   
-                                  
                                   <div class="submit">
                                     <input type="submit" value="SEND" id="button-blue"/>
                                     <div class="ease"></div>
@@ -169,10 +159,27 @@
                           </div>
                         </div>
 
+                    
+                        <div class=" footer gold">
+                            <a class="social gold" href="https://www.linkedin.com/in/melawini" target="blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>   
+                            <a class="social gold" href="http://github.com/mai710" target="blank">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                            <a class="social gold" href="https://twitter.com/maicodes" target="blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a class="social gold" href="http://mai710.tumblr.com" target="blank">
+                                <i class="fa fa-tumblr"></i>
+                            </a>    
+                        </div>
+
                     </div>
                 </div>
         
             </div>
+
 
         </div>
 
@@ -192,15 +199,14 @@
                 <h2 class="header">Client:</h2><h2 class="sub-header"></h2>
                 <br/>
                 <h2 class="header">Developed at:</h2><h2 class="sub-header"></h2>
-                <p/>
+                <br/><br/>
                 <div class="icon-container"></div>
                 <div class="line"></div>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                <p class="copy">
+                    
                 </p>   
                 <div class="icon-container"></div>
             </div>
-            
         </div>            
     </div>
 
@@ -215,8 +221,8 @@
     <script type="text/javascript" src="include/js/jquery.fittext.js"></script>
     <script>
         jQuery(".splash .caption").fitText(1.2);
-        jQuery(".contact .caption").fitText(1.8);
-        jQuery(".contact .caption#sub-caption").fitText(2);
+        jQuery(".contact .caption#header-caption").fitText(1.8);
+        jQuery(".contact .caption#sub-caption").fitText(2.5);
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
