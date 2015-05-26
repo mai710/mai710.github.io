@@ -39,12 +39,10 @@ function BuildPortfolio() {
                                 + "<div class='face'>"
                                     + "<div class='curtain'>"
                                         + "<div class='content'>"
-                                            // + "<button class='sub-header'>View Details</button>"
                                         + "</div>"
                                     + "</div>"
                                 + "</div>"
                                 + "<div class='tab'>"
-                                    // +"<div class='pointer' id='black'></div>"
                                     + "<div class='content-subhead-wrapper'>"
                                         + "<div class='content-subhead'>"
                                             + "<h3 class='header'></h3>"
@@ -214,7 +212,7 @@ var storeLinks = [
     [],
     [],
     ["https://itunes.apple.com/ca/app/virtual-mazda3/id695879761?mt=8", "https://play.google.com/store/apps/details?id=com.addispatch.Mazda3En&hl=en"],
-    ["https://itunes.apple.com/ca/app/man-steel-experience-canada/id646491828?mt=8", ""], 
+    ["https://itunes.apple.com/ca/app/man-steel-experience-canada/id646491828?mt=8", "https://play.google.com/store/apps/details?id=com.wb.ManOfSteel.Experience"], 
     []
 ];
 
