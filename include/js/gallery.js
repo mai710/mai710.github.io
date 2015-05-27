@@ -11,13 +11,11 @@ $(document).ready(function() {
     // });
     $('.curtain').click(function(event) {
         event.stopPropagation();
-        console.log('CLICK');
         var i = $('.curtain').index(this);
         ExpandPortfolio(i);
     });
     $('.tab').click(function(event) {
         event.stopPropagation();
-        console.log('CLICK');
         var i = $('.tab').index(this);
         ExpandPortfolio(i);
     });
