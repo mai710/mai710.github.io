@@ -10,6 +10,15 @@
     src: url(fonts/FiraSans/FiraSans-ExtraLight.otf); 
 }
 
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(http://fonts.gstatic.com/s/lato/v11/22JRxvfANxSmnAhzbFH8PgLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 
 /*********** LOADER **********/
 
@@ -264,12 +273,12 @@ button {
 }
 .theme-button:hover {
     color: #262626;
-    border: rgb(158, 133, 92) solid 1px;
+    border: #B09467 solid 1px;
 }
 .ease {
     width: 0px;
     height: 51px;
-    background-color: #D3B380;
+    background-color: #B09467;
 
     -webkit-transition: .3s ease;
     -moz-transition: .3s ease;
@@ -282,7 +291,6 @@ button {
 }
 .theme-button:hover .ease{
   width: 100%;
-  background-color: rgb(158, 133, 92);
 }
 
 .pure-g {
@@ -471,10 +479,18 @@ a.social {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 
-    -ms-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
+    -ms-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+}
+.face img {
+    position: absolute;
+    margin: auto;
+    top:0; bottom:0;
+    width: 100%;
+    vertical-align: middle;
 }
 
 .curtain {
@@ -493,12 +509,12 @@ a.social {
     width: 100%;
     height: 35%;
     bottom: 0;
-    border-top: #D3B380 solid 3px;
-    border-bottom: #D3B380 solid 3px;
+    border-top: #B09467 solid 3px;
+    border-bottom: #B09467 solid 3px;
 
-    -ms-transition: all 0.1s linear;
-    -webkit-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+    -ms-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.2s linear;
 }
 
 .content-subhead-wrapper {
@@ -526,13 +542,18 @@ a.social {
 }
 
 .l-box-1 {
-    background-size: cover;
-    background-position: center;
     position: relative;
     height: 0;
     margin: auto;
     top: 0;
     left: 0;
+    overflow: hidden;
+}
+.l-box-1 img {
+    position: absolute;
+    left:0;
+    height: 0%;
+    vertical-align: middle;
 }
 
 .l-box-2 {
@@ -562,6 +583,7 @@ a.social {
 p.copy {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
+    font-weight: 300;
     color: white;
 }
 
@@ -793,6 +815,12 @@ p.copy {
     .expanded .l-box-1 {
         height: 25%;
     }
+    .l-box-1 img {
+        margin: auto;
+        top:0; bottom:0;
+        width: 100%;
+        height: auto;
+    }   
 
     #portfolio .content i {font-size: 90px; }
     #contact .content i {font-size: 40px; }
@@ -879,6 +907,11 @@ p.copy {
     .expanded .l-box-1 {
         height: 100%;
     }
+    .l-box-1 img {
+        left:0;
+        height: 100%;
+        width: auto;
+    }
 
 /******* Portfolio Expanded *********/
 
@@ -944,17 +977,15 @@ p.copy {
         -webkit-filter: grayscale(1);
     }
     .item:hover .face {
-        height: 80%;
+        /*height: 80%;*/
         filter: grayscale(0);
         -webkit-filter: grayscale(0);
     }
 
     .tab {
-        opacity: 0;
         height: 0%
     }
     .item:hover .tab {
-        opacity: 1;
         height: 25%;
     }
 
