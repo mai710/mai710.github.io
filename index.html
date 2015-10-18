@@ -21,8 +21,7 @@
 
     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'> -->
 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="include/css/jquery.fullPage.css">
     <link rel="stylesheet" href="include/css/theme.css">
 
@@ -44,301 +43,58 @@
 </head>
 
 
-<body ng-controller="GalleryController as galleryCtrl">
+<body>
         
-    <div class="loader-bg">          
+    <!-- <div class="loader-bg">          
         <span class="loader"><span class="loader-inner"></span></span>
-    </div>
+    </div> -->
         
-    <div class="banner black-bg">
+    <!-- <div class="banner black-bg">
         <div class="home"></div>
         <div class="section-header">
             <h1 class="white"></h1>
             <h1 class="gold"></h1>
         </div>
-    </div>    
+    </div>  -->   
 
 
-    <div id="fullpage">
-
-
-        <!-- SPLASH SECTION -->
-        <div class="section" id="section1">
-
-
-            <div class="pure-g splash">
-                <div class="l-box pure-u-1-1 pure-u-md-1-1 pure-u-lg-2-3"> 
-                    <div class="content">
-                        <div class="caption gold">
-                            HELLO, I'M MAI. 
-                            <br/>I BUILD MOBILE APPS AND 
-                            <br/>INTERACTIVE EXPERIENCES.
-                        </div>
-                    </div> 
-                </div>
-                <div class="l-box pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-3">  
-                    <div class="content">
-                        <div class="theme-button">
-                            <div class="content">VIEW PORTFOLIO</div>
-                            <div class="ease"></div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-
-            <div class="banner" id="footer">
-                <div class="content">
-                    <div class=" footer gold">
-                        ©2015 MAI EL-AWINI.
-                        &nbsp&nbsp
-                        <a class="social gold" href="https://www.linkedin.com/in/melawini" target="blank">
-                            <i class="fa fa-linkedin"></i>
-                        </a>   
-                        <a class="social gold" href="http://github.com/mai710" target="blank">
-                            <i class="fa fa-github-alt"></i>
-                        </a>
-                        <a class="social gold" href="http://codepen.io/maicodes/" target="blank">
-                            <i class="fa fa-codepen"></i>
-                        </a> 
-                        <a class="social gold" href="https://twitter.com/maicodes" target="blank">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>    
-
-        </div>
-
-
-        <!-- PORTFOLIO SECTION -->
-        <div class="section" id="section2">
-
-
-            <div class='pure-g portfolio'>
-                <div ng-repeat="item in items" class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                    <div class='item' ng-click="expandItem(item)">
-                        <div class='face'>
-                            <img ng-src="{{item.image}}"/>
-                            <div class='curtain'>
-                                <div class='content'></div>
-                            </div>
-                        </div>
-                        <div class='tab' title="{{item.title}}" >
-                            <div class='content-subhead-wrapper'>
-                                <div class='content-subhead'>
-                                    <h3 class='header'>{{item.title}}</h3>
-                                    <h2 class='dash'>___</h2>
-                                    <h4 class='sub-header'>{{item.client}}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- CONTACT SECTION -->
-        <div class="section" id="section3">
-
-             <div class="pure-g contact">
-
-                <div class="l-box pure-u-1-1 pure-u-md-1-1 pure-u-lg-2-3">
-                        
-                    <div class="content">
-                        <h1 class="caption gold">NEED HELP WITH A PROJECT?</h1>
-                        <p class="copy">
-                            Bringing awesome designs and animations to life is what I enjoy most. I have experience building applications with rich 2D and 3D content, and I'm interested in taking on new challenges designing and developing for web and mobile. Shoot me an email to get in touch. 
-                        </p>
-                        <h1 class="caption gold">INTERESTED IN AUGMENTED REALITY?</h1>
-                        <p class="copy">
-                            AR has grown in the past few years both as a technology and in popularity. I've helped agencies integrate AR into their campaigns to set their brands above the competition. I've used it as an educational tool and as a utility to make daily tasks easier and more fun. 
-                            <br/>Not sure how you'd use AR? Let's brainstorm some ideas together! 
-                        <p/>
-                    </div>
-
-                </div>
-
-                <div class="l-box pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-3"> 
-
-                    <div class="content">  
-                        <!-- <h1 class="caption gold">CONNECT WITH ME.</h1> -->
-                    
-                        <div class="social-list">
-                            
-                            <div class="theme-button">
-                                <div class="content">
-                                    <a class="social" href="mailto:mai.elawini@gmail.com">
-                                    EMAIL
-                                    </a>
-                                </div>
-                                <div class="ease"></div>
-                            </div>
-
-                            <div class="theme-button">
-                                <div class="content">
-                                    <a class="social" href="https://www.linkedin.com/in/melawini" target="blank">
-                                    LINKEDIN
-                                    </a>
-                                </div>
-                                <div class="ease"></div>
-                            </div>
-                            <div class="theme-button">
-                                <div class="content">
-                                    <a class="social" href="http://github.com/mai710" target="blank">
-                                    GITHUB
-                                    </a>
-                                </div>
-                                <div class="ease"></div>
-                            </div>
-                             <div class="theme-button">
-                                <div class="content">
-                                    <a class="social" href="http://codepen.io/maicodes" target="blank">
-                                    CODEPEN
-                                    </a>
-                                </div>
-                                <div class="ease"></div>
-                            </div>
-                            <div class="theme-button">
-                                <div class="content">
-                                    <a class="social" href="https://twitter.com/maicodes" target="blank">
-                                    TWITTER
-                                    </a>
-                                </div>
-                                <div class="ease"></div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-        
-            </div>
-
-            <div class="banner" id="footer">
-                <div class="content">
-                    <div class=" footer gold">
-                        DESIGNED AND DEVELOPED BY MAI EL-AWINI.
-                        DOWNLOAD THE TEMPLATE 
-                        <a href="https://github.com/mai710/Goldslate" target="blank" class="gold">HERE</a>.
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+    <div class="gooeys">
+        <canvas style="position:absolute;" id="canvas"></canvas>
+        <!-- <div class="container" id="logo"></div> -->
     </div>
-    
 
-    <!-- PORTFOLIO EXPANDED SECTION -->
-
-    <div class="expanded black-bg">
-        <i class="fa fa-times close-button white" ng-click="collapseItem()"></i>
-
-        <div class="pure-g portfolio-expanded" >
-            <div class="l-box-1 pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-3">
-                <img ng-src="{{selectedImage}}" />
-            </div>
-            <div class="l-box-2 pure-u-1-1 pure-u-md-1-1 pure-u-lg-2-3">
-                <h1 class="title gold">{{selectedTitle}}</h1>
-                <h2 class="header">Client:</h2><h2 class="sub-header">{{selectedClient}}</h2>
-                <br/>
-                <h2 class="header">Developed at:</h2><h2 class="sub-header">{{selectedDeveloper}}</h2>
-                <br/><br/>
-                <div class="icon-container" >
-                    <div class="tag" id={{mytag}} ng-repeat="mytag in selectedItem.tags">
-                        <span>{{mytag}}</span>
-                    </div>        
-                </div>
-                <div class="line"></div>
-                <p class="copy" ng-bind-html="selectedSummary | html"></p>   
-                <div class="icon-container">
-                    <div class="theme-button" ng-repeat="store in selectedItem.stores">
-                        <a class="content store-link" id={{store[0]}} href={{store[1]}} target="blank"></a>
-                        <div class='ease'></div>
-                    </div>
-                </div>
-            </div>
-        </div> 
+    <div class="bg center">
+        <div class="logo center"></div> 
     </div>
+
+
+    <svg>
+      <defs>
+        <filter id="filter">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 17 -10" result="filter"/>
+          <feComposite in="SourceGraphic" in2="filter" operator="atop"/>
+        </filter>
+      </defs>
+    </svg>
+
+
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
-    <script src="include/js/app.js"></script>
-    <script src="include/js/jquery.slimscroll.min.js"></script>
-    <script src="include/js/jquery.fullPage.min.js"></script>
-    <script src="include/js/jquery.fittext.js"></script>
+    <script src="include/js/particles.js"></script>
     <script>
-        jQuery(".splash .caption").fitText(1.2);
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.splash .theme-button').click(function(event) {
-                event.stopPropagation();
-                $('#fullpage').fullpage.moveTo(2);
-            });
-
-            $('.home').click(function(event) {
-                event.stopPropagation();
-                $('#fullpage').fullpage.moveTo(1);
-            });
-
-        });
-
         $(window).load(function(){
-            $('.loader-bg').fadeOut('slow');
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#fullpage').fullpage({
-                sectionsColor: ['#262626', '#262626', '#262626'],
-                recordHistory: false,
-                scrollingSpeed: 800,
-                scrollOverflow: true,
-                touchSensitivity: 15,
-                slidesNavigation: true,
-                slidesNavPosition: 'bottom',
-                controlArrowColor: '#D3B380',
-                
-                afterLoad:  function(anchorLink, index) {
-                    if(index == 1) {
-                        $('.home').animate({
-                            top: '100%'
-                        }, 400);
-                    }  
-                    else if(index == 2) {
-                        $('.section-header h1.white').html('Project&nbsp');
-                        $('.section-header h1.gold').html('Portfolio');
-                        $('.section-header').slideDown('slow');
-                    }
-                    else if(index == 3) {
-                        $('.section-header h1.white').html('Get&nbsp');
-                        $('.section-header h1.gold').html('In Touch');
-                        $('.section-header').slideDown('slow');
-                    }
-                },  
-
-                onLeave: function(index, nextIndex, direction) {
-                    if(index == 1) {
-                        $('.home').animate({
-                            top: '50%'
-                        }, 200);
-                    }
-
-                    $('.section-header').slideUp('slow');
-                }
+            // $('.bg').fadeOut('slow');
+            $('.logo').click(function() {
+                burst();
             });
-
         });
     </script>
+
 
 </body>
+
 
 
 
