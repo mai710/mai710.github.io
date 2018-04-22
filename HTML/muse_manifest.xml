@@ -1,0 +1,293 @@
+<manifest alg="2" build="2017.1.0.379" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="dj-doutone-promo.com" resolutions="1x" timestamp="1507841860959">
+  <folder name="css">
+    <file name="site_global.css" crc="444006867"/>
+    <file name="about.css" crc="526248149" ref="about"/>
+    <file name="nomq_about.css" crc="312537074" ref="about"/>
+    <file name="iefonts_about.css" crc="3824530138" ref="about"/>
+    <file name="index.css" crc="469391183" ref="index"/>
+    <file name="nomq_index.css" crc="74822653" ref="index"/>
+    <file name="iefonts_index.css" crc="3824530138" ref="index"/>
+    <file name="music.css" crc="4132704339" ref="music"/>
+    <file name="nomq_music.css" crc="3914184118" ref="music"/>
+    <file name="iefonts_music.css" crc="3824530138" ref="music"/>
+  </folder>
+  <folder name="assets">
+    <file name="bensound-scifi.mp3" crc="318012095" seo="true" mt="1507835000000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:music:about"/>
+    <file name="museutils.js" crc="17924269" ref="index:music:about"/>
+    <file name="whatinput.js" crc="86476730" ref="index:music:about"/>
+    <file name="museconfig.js" crc="278381782" ref="index:music:about"/>
+    <file name="jquery.watch.js" crc="4240030481" ref="index:music:about"/>
+    <file name="webpro.js" crc="416662029" ref="index:music:about"/>
+    <file name="musewpslideshow.js" crc="4034900702" ref="index:music:about"/>
+    <file name="jquery.museoverlay.js" crc="528673841" ref="index:music:about"/>
+    <file name="touchswipe.js" crc="432264157" ref="index:music:about"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="3854337258" ref="index:music:about"/>
+    <file name="jquery.museresponsive.js" crc="4267800278" ref="index:music:about"/>
+    <file name="require.js" crc="3861931657" ref="index:music:about"/>
+    <file name="form_check.php" crc="4110044762" ref="about"/>
+    <file name="form_throttle.php" crc="22190333" ref="about"/>
+    <file name="form_process.php" crc="257545537" ref="about"/>
+    <file name="form-u7258.php" crc="4120992321" ref="about"/>
+  </folder>
+  <folder name="images">
+    <file name="blank.gif" crc="4208392903" ref="index:music:about"/>
+    <file name="browser-fill-image.jpg" crc="4226288715" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="duotone.jpg" crc="6109723" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="browser-fill-image1200x675.jpg" crc="66519876" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="browser-fill-image800x450.jpg" crc="4192043251" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="texture.png" crc="4045760107" ref="music:about">
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="texture-u998-fr.png" crc="217390552" ref="music"/>
+    <file name="button transition.png" crc="4292575080" ref="music">
+      <caption webpage="music" alt="VIEW MORE"/>
+      <caption webpage="music" alt="VIEW MORE"/>
+      <caption webpage="music" alt="VIEW MORE"/>
+      <caption webpage="music" alt="VIEW MORE"/>
+      <caption webpage="music" alt="VIEW MORE"/>
+    </file>
+    <file name="deejay-1839788green.jpg" crc="183015191" ref="music:about">
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="about-image.jpg" crc="4050034988" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="pattern-black-u2252-fr.png" crc="3762691052" ref="music"/>
+    <file name="vinyl-2202325_640bw.png" crc="4144378767" ref="music">
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="button-transition-purrple.png" crc="124294751" ref="music">
+      <caption webpage="music" alt="CONTACT ME"/>
+      <caption webpage="music" alt="CONTACT ME"/>
+      <caption webpage="music" alt="CONTACT ME"/>
+      <caption webpage="music" alt="CONTACT ME"/>
+      <caption webpage="music" alt="CONTACT ME"/>
+    </file>
+    <file name="latest-gigs-bg-u2560-fr.png" crc="4031426149" ref="music"/>
+    <file name="pattern-black-u3005-fr.png" crc="112757866" ref="music"/>
+    <file name="music-image1.jpg" crc="3922661634" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="music-image2.jpg" crc="3922661634" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="033_music_2392x2076_all-free-downloadcomsss.png" crc="309754816" ref="music">
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="album-cover1.jpg" crc="313240616" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="album-cover2.jpg" crc="313240616" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="album-cover3.jpg" crc="313240616" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="music-image3.jpg" crc="3922661634" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="album-cover4.jpg" crc="313240616" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="texture-u6076-fr.png" crc="399167848" ref="music"/>
+    <file name="awards-bg.jpg" crc="4050034988" ref="music">
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="texture-u3289-fr.png" crc="4215664985" ref="music:about"/>
+    <file name="music-slide1.jpg" crc="168427131" seo="true" ref="music">
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="music-slide2.jpg" crc="168427131" seo="true" ref="music">
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+      <caption webpage="music" alt=""/>
+    </file>
+    <file name="loading.gif" crc="3815509949" ref="music:about"/>
+    <file name="vinyl-2202325_640bw-u7677-19-fr.png" crc="3912636792" ref="music"/>
+    <file name="about-image-u1028-fr.jpg" crc="4089841171" ref="music"/>
+    <file name="texture-u2471-fr.png" crc="170389316" ref="music"/>
+    <file name="awards-bg-u3587-fr.jpg" crc="378382556" ref="music"/>
+    <file name="texture-u3289-fr2.png" crc="3893839874" ref="music:about"/>
+    <file name="vinyl-2202325_640bw-u7677-19-fr2.png" crc="12616639" ref="music"/>
+    <file name="vinyl-2202325_640bw-u7741-19-fr.png" crc="287923667" ref="music"/>
+    <file name="vinyl-2202325_640bw-u2287-fr.png" crc="4112729489" ref="music"/>
+    <file name="awards-bg-u3587-fr2.jpg" crc="3817074938" ref="music"/>
+    <file name="texture-u3289-fr3.png" crc="4009283480" ref="music:about"/>
+    <file name="vinyl-2202325_640bw-u7677-19-fr3.png" crc="4018330433" ref="music"/>
+    <file name="vinyl-2202325_640bw-u7741-19-fr2.png" crc="41795207" ref="music"/>
+    <file name="vinyl-2202325_640bw-u7677-19-fr4.png" crc="46598181" ref="music"/>
+    <file name="music-image1-u3033-fr.jpg" crc="4096564889" ref="music"/>
+    <file name="music-image2-u3119-fr.jpg" crc="4096564889" ref="music"/>
+    <file name="music-image3-u3122-fr.jpg" crc="4096564889" ref="music"/>
+    <file name="awards-bg-u3587-fr.png" crc="3802494489" ref="music"/>
+    <file name="texture-u3289-fr4.png" crc="3824350335" ref="music:about"/>
+    <file name="vinyl-2202325_640bw-u7677-19-fr5.png" crc="279001763" ref="music"/>
+    <file name="vinyl-2202325_640bw-u7741-19-fr3.png" crc="329726932" ref="music"/>
+    <file name="about-image-u1028-fr2.jpg" crc="439727329" ref="music"/>
+    <file name="music-image1-u3033-fr2.jpg" crc="4186986895" ref="music"/>
+    <file name="music-image2-u3119-fr2.jpg" crc="4186986895" ref="music"/>
+    <file name="music-image3-u3122-fr2.jpg" crc="4186986895" ref="music"/>
+    <file name="texture-u6076-fr2.png" crc="4067514355" ref="music"/>
+    <file name="texture-u3289-fr5.png" crc="3892916106" ref="music:about"/>
+    <file name="about-slide1.jpg" crc="168427131" seo="true" ref="about">
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="about-slide2.jpg" crc="168427131" seo="true" ref="about">
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="texture-u5925-fr.png" crc="4928949" ref="about"/>
+    <file name="vinyl-2202325_640bw-u6139-fr.png" crc="3775364405" ref="about"/>
+    <file name="concert4green-u6147-fr.png" crc="156004715" ref="about"/>
+    <file name="history-u6147-fr.png" crc="3792772441" ref="about"/>
+    <file name="aboutme-image.jpg" crc="4050034988" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="texture-u6184-fr.png" crc="3995557143" ref="about"/>
+    <file name="gallery1-u15638-fr.jpg" crc="135240787" ref="about"/>
+    <file name="gallery1-u15638-r-fr.png" crc="3859893404" ref="about"/>
+    <file name="gallery4-u17923-fr.jpg" crc="531440931" ref="about"/>
+    <file name="gallery4-u17923-r-fr.png" crc="460004744" ref="about"/>
+    <file name="gallery5-u17931-fr.jpg" crc="531440931" ref="about"/>
+    <file name="gallery5-u17931-r-fr.png" crc="460004744" ref="about"/>
+    <file name="gallery2-u17906-fr.jpg" crc="531440931" ref="about"/>
+    <file name="gallery2-u17906-r-fr.png" crc="460004744" ref="about"/>
+    <file name="gallery3-u17915-fr.jpg" crc="531440931" ref="about"/>
+    <file name="gallery3-u17915-r-fr.png" crc="4276964787" ref="about"/>
+    <file name="gallery6-u17939-fr.jpg" crc="135240787" ref="about"/>
+    <file name="gallery6-u17939-r-fr.png" crc="218402034" ref="about"/>
+    <file name="gallery1.jpg" crc="4074365197" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="gallery2.jpg" crc="4074365197" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="gallery3.jpg" crc="4074365197" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="gallery4.jpg" crc="4074365197" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="gallery5.jpg" crc="4074365197" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="gallery6.jpg" crc="4074365197" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="press.jpg" crc="4050034988" ref="about">
+      <caption webpage="about" alt=""/>
+    </file>
+    <file name="pattern-black-u7118-fr.png" crc="5995627" ref="about"/>
+    <file name="vinyl-2202325_640bw-u7310-fr.png" crc="156761654" ref="about"/>
+    <file name="aboutme-image-u5928-fr.jpg" crc="4089841171" ref="about"/>
+    <file name="gallery1-u15638-fr2.jpg" crc="531440931" ref="about"/>
+    <file name="gallery1-u15638-r-fr2.png" crc="247864258" ref="about"/>
+    <file name="gallery6-u17939-fr2.jpg" crc="531440931" ref="about"/>
+    <file name="gallery6-u17939-r-fr2.png" crc="4276964787" ref="about"/>
+    <file name="history-u6147-fr2.png" crc="495833826" ref="about"/>
+    <file name="vinyl-2202325_640bw-u7310-fr2.png" crc="156761654" ref="about"/>
+    <file name="aboutme-image-u5928-fr2.jpg" crc="37398952" ref="about"/>
+    <file name="gallery1-u15638-r-fr3.png" crc="439066072" ref="about"/>
+    <file name="gallery2-u17906-r-fr2.png" crc="347181711" ref="about"/>
+    <file name="gallery3-u17915-r-fr2.png" crc="3964676671" ref="about"/>
+    <file name="gallery4-u17923-r-fr2.png" crc="347181711" ref="about"/>
+    <file name="gallery5-u17931-r-fr2.png" crc="347181711" ref="about"/>
+    <file name="gallery6-u17939-r-fr3.png" crc="3964676671" ref="about"/>
+    <file name="gallery1-u15643-fr.jpg" crc="4049838510" ref="about"/>
+    <file name="gallery2-u17911-fr.jpg" crc="4049838510" ref="about"/>
+    <file name="gallery3-u17919-fr.jpg" crc="4049838510" ref="about"/>
+    <file name="gallery4-u17927-fr.jpg" crc="4049838510" ref="about"/>
+    <file name="gallery5-u17935-fr.jpg" crc="4049838510" ref="about"/>
+    <file name="gallery6-u17943-fr.jpg" crc="4049838510" ref="about"/>
+    <file name="aboutme-image-u5928-fr3.jpg" crc="4128839732" ref="about"/>
+    <file name="history-u6147-fr3.png" crc="11264004" ref="about"/>
+    <file name="gallery1-u15638-fr3.jpg" crc="3772938924" ref="about"/>
+    <file name="gallery1-u15638-r-fr4.png" crc="4198476419" ref="about"/>
+    <file name="gallery2-u17906-fr2.jpg" crc="3772938924" ref="about"/>
+    <file name="gallery2-u17906-r-fr3.png" crc="4264139573" ref="about"/>
+    <file name="gallery3-u17915-fr2.jpg" crc="3772938924" ref="about"/>
+    <file name="gallery3-u17915-r-fr3.png" crc="529924404" ref="about"/>
+    <file name="gallery4-u17923-fr2.jpg" crc="3772938924" ref="about"/>
+    <file name="gallery4-u17923-r-fr3.png" crc="4264139573" ref="about"/>
+    <file name="gallery5-u17931-fr2.jpg" crc="3772938924" ref="about"/>
+    <file name="gallery5-u17931-r-fr3.png" crc="4264139573" ref="about"/>
+    <file name="gallery6-u17939-fr3.jpg" crc="3772938924" ref="about"/>
+    <file name="gallery6-u17939-r-fr4.png" crc="529924404" ref="about"/>
+    <file name="gallery1-u15643-fr2.jpg" crc="3867313938" ref="about"/>
+    <file name="gallery2-u17911-fr2.jpg" crc="3867313938" ref="about"/>
+    <file name="gallery3-u17919-fr2.jpg" crc="3867313938" ref="about"/>
+    <file name="gallery4-u17927-fr2.jpg" crc="3867313938" ref="about"/>
+    <file name="gallery5-u17935-fr2.jpg" crc="3867313938" ref="about"/>
+    <file name="gallery6-u17943-fr2.jpg" crc="3867313938" ref="about"/>
+    <file name="press-u7076-fr.png" crc="329954836" ref="about"/>
+    <file name="vinyl-2202325_640bw-u7310-fr3.png" crc="3977086685" ref="about"/>
+  </folder>
+  <file name="index.html" crc="374476889" seo="true" mt="1507838274368" redirect="true"/>
+  <file name="music.html" crc="3885303692" seo="true" mt="1507841830183" redirect="true"/>
+  <file name="about.html" crc="438350393" seo="true" mt="1507841830280" redirect="true"/>
+</manifest>
